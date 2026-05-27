@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2巻 表紙デザイン比較</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    background: #f5f0eb;
+    color: #333;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #2c2c2c;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 48px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  }
+  .card img {
+    width: 100%;
+    display: block;
+  }
+  .card-body {
+    padding: 24px;
+  }
+  .card-label {
+    display: inline-block;
+    background: #e8ddd3;
+    color: #6b5a4e;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .card h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #2c2c2c;
+  }
+  .card-theme {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8b6f47;
+    margin-bottom: 10px;
+  }
+  .card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #666;
+  }
+  .card ul {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #666;
+    padding-left: 18px;
+    margin-top: 8px;
+  }
+  .book-info {
+    max-width: 1200px;
+    margin: 48px auto 0;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px;
+  }
+  .book-info h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #2c2c2c;
+    border-left: 4px solid #8b6f47;
+    padding-left: 12px;
+  }
+  .book-info table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .book-info th {
+    text-align: left;
+    padding: 8px 16px;
+    background: #f9f5f0;
+    color: #6b5a4e;
+    font-weight: 600;
+    width: 160px;
+    border-bottom: 1px solid #e8e0d8;
+  }
+  .book-info td {
+    padding: 8px 16px;
+    border-bottom: 1px solid #e8e0d8;
+    color: #555;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 12px;
+    color: #aaa;
+  }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; max-width: 400px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>第2巻「60歳からの新人生戦略」表紙デザイン比較</h1>
+<p class="subtitle">渡邉ひとし 著 ― 3つの表紙案からお選びください</p>
+
+<div class="grid">
+
+  <!-- 案A -->
+  <div class="card">
+    <img src="表紙案_v1.png" alt="表紙案A">
+    <div class="card-body">
+      <span class="card-label">案 A</span>
+      <h2>種を植える道</h2>
+      <div class="card-theme">「思い出の種を植える」を直接表現</div>
+      <p>日の出に向かって歩む人物と、道沿いに芽吹く花々。桜の並木が日本的な美を添える。</p>
+      <ul>
+        <li>暖色系（金・オレンジ・ピンク）</li>
+        <li>具象的・物語性が高い</li>
+        <li>親しみやすく万人向け</li>
+        <li>「リボーン」と「種を植える」の両方を表現</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 案B -->
+  <div class="card">
+    <img src="表紙案_v2.png" alt="表紙案B">
+    <div class="card-body">
+      <span class="card-label">案 B</span>
+      <h2>再生の大樹</h2>
+      <div class="card-theme">根（経験）から新たな生命が芽吹く</div>
+      <p>深い根は過去の蓄積を、色彩豊かな枝葉はリボーンを象徴。幹に不死鳥のシルエットが溶け込む。</p>
+      <ul>
+        <li>水彩画風・アート性が高い</li>
+        <li>白背景でモダン＆洗練</li>
+        <li>「量から質への転換」を視覚化</li>
+        <li>書斎に飾りたくなるデザイン</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 案C -->
+  <div class="card">
+    <img src="表紙案_v3.png" alt="表紙案C">
+    <div class="card-body">
+      <span class="card-label">案 C</span>
+      <h2>四季の山道</h2>
+      <div class="card-theme">人生の四季を登る旅路</div>
+      <p>四季が移り変わる山道を登る人物。浮世絵風のタッチと力強い構図で「人生二回論」を表現。</p>
+      <ul>
+        <li>浮世絵風・日本的インパクト大</li>
+        <li>赤・橙の力強い色彩</li>
+        <li>「年代別ロードマップ」を視覚化</li>
+        <li>目を引く・書店映えする</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="book-info">
+  <h3>書籍情報</h3>
+  <table>
+    <tr><th>タイトル</th><td>60歳からの新人生戦略</td></tr>
+    <tr><th>サブタイトル</th><td>引退ではなく"リボーン"。自分軸で次の40年をつくる</td></tr>
+    <tr><th>著者</th><td>渡邉ひとし</td></tr>
+    <tr><th>形式</th><td>Kindle電子書籍</td></tr>
+    <tr><th>核心コンセプト</th><td>リボーン（自己回帰） / Priority / 人生二回論 / 老益 / 思い出の種を植える</td></tr>
+    <tr><th>想定読者</th><td>50〜69歳の中小企業経営者・事業承継準備層・退職準備層</td></tr>
+  </table>
+</div>
+
+<p class="footer">Generated with DALL-E 3 API / 2026-04-07</p>
+
+</body>
+</html>

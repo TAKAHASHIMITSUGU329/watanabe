@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2巻 表紙デザイン比較（第1巻準拠）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+    background: #e8e4df;
+    padding: 40px 20px;
+  }
+  h1 { text-align: center; font-size: 26px; color: #2c2c2c; margin-bottom: 6px; }
+  .page-sub { text-align: center; font-size: 14px; color: #888; margin-bottom: 40px; }
+
+  .compare-grid {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .compare-item { text-align: center; }
+  .compare-item .label {
+    font-size: 15px; font-weight: 700; color: #555; margin-bottom: 12px;
+  }
+  .compare-item .desc {
+    font-size: 12px; color: #999; margin-top: 10px; max-width: 320px;
+  }
+
+  /* ===== 共通：表紙フレーム ===== */
+  .cover {
+    width: 320px;
+    height: 500px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 4px 6px 20px rgba(0,0,0,0.25);
+    position: relative;
+  }
+
+  /* ===== 案A：ネイビー×ゴールド（第1巻踏襲） ===== */
+  .cover-a {
+    background: linear-gradient(180deg, #1a2744 0%, #1a2744 38%, #f5f0e8 38%, #f5f0e8 100%);
+  }
+  .cover-a .cat {
+    text-align: center; padding-top: 16px;
+    font-size: 10px; letter-spacing: 4px; color: #c4975a; font-weight: 700;
+  }
+  .cover-a .title-area {
+    padding: 18px 24px 0;
+    text-align: center;
+  }
+  .cover-a .main-title {
+    font-family: "Noto Serif JP", serif;
+    font-size: 28px; font-weight: 900; color: #fff;
+    line-height: 1.3;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .cover-a .main-title em {
+    font-style: normal; color: #f5c842;
+  }
+  .cover-a .sub-title {
+    margin-top: 10px;
+    font-size: 11px; color: #bcc8dc; line-height: 1.6;
+    letter-spacing: 0.5px;
+  }
+  .cover-a .photo-circle {
+    width: 130px; height: 130px; border-radius: 50%;
+    border: 4px solid #c4975a;
+    overflow: hidden;
+    position: absolute;
+    top: 150px; right: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .cover-a .photo-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .cover-a .points {
+    position: absolute;
+    top: 210px; left: 20px;
+    width: 150px;
+  }
+  .cover-a .points li {
+    list-style: none;
+    font-size: 10px;
+    color: #333;
+    padding: 5px 8px;
+    margin-bottom: 4px;
+    background: linear-gradient(90deg, #f0a030, #f5c842);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 2px;
+  }
+  .cover-a .author-area {
+    position: absolute;
+    bottom: 80px; left: 20px;
+    font-size: 12px; color: #555;
+  }
+  .cover-a .author-area .name { font-size: 16px; font-weight: 900; color: #1a2744; }
+  .cover-a .badge {
+    position: absolute;
+    bottom: 16px; right: 16px;
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #c4975a, #a07030);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    color: #fff; font-size: 9px; font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    text-align: center;
+    line-height: 1.3;
+  }
+  .cover-a .badge .big { font-size: 13px; }
+  .cover-a .vol {
+    position: absolute;
+    bottom: 20px; left: 20px;
+    font-size: 10px; color: #999;
+    letter-spacing: 1px;
+  }
+
+  /* ===== 案B：ネイビー×コーラル（温かみ） ===== */
+  .cover-b {
+    background: linear-gradient(180deg, #1e2d4d 0%, #1e2d4d 42%, #faf6f1 42%, #faf6f1 100%);
+  }
+  .cover-b .accent-bar {
+    height: 5px;
+    background: linear-gradient(90deg, #e06040, #f09060, #f5b070);
+  }
+  .cover-b .cat {
+    text-align: center; padding-top: 14px;
+    font-size: 10px; letter-spacing: 4px; color: #f09060; font-weight: 700;
+  }
+  .cover-b .title-area {
+    padding: 14px 22px 0; text-align: center;
+  }
+  .cover-b .kicker {
+    font-size: 11px; color: #aabbdd; margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .cover-b .main-title {
+    font-family: "Noto Serif JP", serif;
+    font-size: 26px; font-weight: 900; color: #fff;
+    line-height: 1.35;
+  }
+  .cover-b .main-title em {
+    font-style: normal; color: #f5c040;
+  }
+  .cover-b .sub-box {
+    margin: 10px auto 0;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 10.5px; color: #dde4f0;
+    line-height: 1.5;
+  }
+  .cover-b .middle-section {
+    position: absolute;
+    top: 205px; left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .cover-b .photo-rect {
+    width: 110px; height: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 3px solid #e06040;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .cover-b .photo-rect img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .cover-b .keywords {
+    margin-left: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .cover-b .keywords span {
+    display: block;
+    font-size: 10px; font-weight: 700;
+    color: #1e2d4d;
+    background: #fde8c8;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border-left: 3px solid #e06040;
+  }
+  .cover-b .author-area {
+    position: absolute;
+    bottom: 60px; left: 22px;
+  }
+  .cover-b .author-area .label { font-size: 10px; color: #999; }
+  .cover-b .author-area .name { font-size: 17px; font-weight: 900; color: #1e2d4d; margin-top: 2px; }
+  .cover-b .series {
+    position: absolute;
+    bottom: 16px; left: 22px;
+    font-size: 10px; color: #aaa;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .cover-b .series .dot { width: 8px; height: 8px; border-radius: 50%; background: #ddd; }
+  .cover-b .series .dot.active { background: #e06040; }
+  .cover-b .badge {
+    position: absolute;
+    bottom: 12px; right: 16px;
+    background: #e06040;
+    color: #fff;
+    font-size: 9px; font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(224,96,64,0.4);
+  }
+
+  /* ===== 案C：ネイビー×グリーン（成長・リボーン） ===== */
+  .cover-c {
+    background: #f8f5f0;
+    position: relative;
+  }
+  .cover-c .top-band {
+    background: linear-gradient(135deg, #1a3050, #2a4a70);
+    height: 240px;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  .cover-c .cat {
+    text-align: center; padding-top: 16px;
+    font-size: 10px; letter-spacing: 4px; color: #60b080; font-weight: 700;
+  }
+  .cover-c .title-area {
+    padding: 16px 20px 0; text-align: center;
+  }
+  .cover-c .main-title {
+    font-family: "Noto Serif JP", serif;
+    font-size: 27px; font-weight: 900; color: #fff;
+    line-height: 1.3;
+  }
+  .cover-c .main-title em {
+    font-style: normal;
+    background: linear-gradient(90deg, #60d090, #a0e0b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .cover-c .sub-title {
+    margin-top: 8px;
+    font-size: 11px; color: #99b8cc; line-height: 1.5;
+  }
+  .cover-c .photo-area {
+    position: absolute;
+    top: 190px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 4px solid #60b080;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 2;
+  }
+  .cover-c .photo-area img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .cover-c .content-area {
+    padding: 80px 20px 0;
+    text-align: center;
+  }
+  .cover-c .concept {
+    font-size: 15px; font-weight: 900; color: #1a3050;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .cover-c .concept em { font-style: normal; color: #2a8855; }
+  .cover-c .pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 16px;
+  }
+  .cover-c .pills span {
+    font-size: 9px; font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #2a8855, #60b080);
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  .cover-c .author-area {
+    position: absolute;
+    bottom: 55px;
+    left: 0; right: 0;
+    text-align: center;
+  }
+  .cover-c .author-area .label { font-size: 10px; color: #999; }
+  .cover-c .author-area .name { font-size: 17px; font-weight: 900; color: #1a3050; margin-top: 2px; }
+  .cover-c .bottom-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 36px;
+    background: linear-gradient(135deg, #1a3050, #2a4a70);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .cover-c .bottom-bar span {
+    font-size: 9px; color: #99b8cc; letter-spacing: 1px;
+  }
+  .cover-c .bottom-bar span.hl { color: #60d090; font-weight: 700; }
+
+  /* ===== 第1巻参照 ===== */
+  .ref-cover {
+    width: 320px; height: 500px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 4px 6px 20px rgba(0,0,0,0.25);
+  }
+  .ref-cover img { width: 100%; height: 100%; object-fit: cover; }
+
+  .footer {
+    text-align: center; margin-top: 40px; font-size: 11px; color: #aaa;
+  }
+</style>
+</head>
+<body>
+
+<h1>第2巻「60歳からの新人生戦略」表紙デザイン比較</h1>
+<p class="page-sub">第1巻のデザインに合わせた3案 ― タイトル・著者名・キーワード入り</p>
+
+<div class="compare-grid">
+
+  <!-- 第1巻 参考 -->
+  <div class="compare-item">
+    <div class="label">参考：第1巻</div>
+    <div class="ref-cover">
+      <img src="第1巻_表紙.png" alt="第1巻表紙">
+    </div>
+    <p class="desc">既刊の第1巻デザイン（ネイビー×オレンジ、写真丸枠、ポイント表示）</p>
+  </div>
+
+  <!-- 案A -->
+  <div class="compare-item">
+    <div class="label">案A：ゴールド（正統派続編）</div>
+    <div class="cover cover-a">
+      <div class="cat">BUSINESS</div>
+      <div class="title-area">
+        <div class="main-title"><em>60歳</em>からの<br>新人生戦略</div>
+        <div class="sub-title">― 引退ではなく"リボーン"<br>自分軸で次の40年をつくる ―</div>
+      </div>
+      <div class="photo-circle">
+        <img src="第1巻_表紙.png" style="object-position: 10% 55%; transform: scale(2.8);">
+      </div>
+      <ul class="points">
+        <li>老害ではなく「老益」へ</li>
+        <li>思い出の種を植える</li>
+        <li>人生は二度おいしい</li>
+        <li>量から質への転換</li>
+      </ul>
+      <div class="author-area">
+        <div>渡邉 ひとし　著</div>
+        <div class="name" style="margin-top: 2px;">渡邉 ひとし</div>
+      </div>
+      <div class="vol">新人生戦略シリーズ Vol.2</div>
+      <div class="badge">
+        <span class="big">第2巻</span>
+        待望の<br>新刊
+      </div>
+    </div>
+    <p class="desc">第1巻と最も近いレイアウト。ネイビー×ゴールドで格調と温かみを両立</p>
+  </div>
+
+  <!-- 案B -->
+  <div class="compare-item">
+    <div class="label">案B：コーラル（温かみ＋活力）</div>
+    <div class="cover cover-b">
+      <div class="accent-bar"></div>
+      <div class="cat">BUSINESS</div>
+      <div class="title-area">
+        <div class="kicker">引退ではなく ── </div>
+        <div class="main-title"><em>"リボーン"</em><br>60歳からの<br>新人生戦略</div>
+        <div class="sub-box">自分軸で次の40年をつくる<br>── 人生は二度おいしい ──</div>
+      </div>
+      <div class="middle-section">
+        <div class="photo-rect">
+          <img src="第1巻_表紙.png" style="object-position: 10% 55%; transform: scale(2.8);">
+        </div>
+        <div class="keywords">
+          <span>60歳 = リボーン（再生）</span>
+          <span>老害ではなく「老益」へ</span>
+          <span>思い出の種を植える</span>
+          <span>量から質への転換</span>
+          <span>人生二回論</span>
+        </div>
+      </div>
+      <div class="author-area">
+        <div class="label">著</div>
+        <div class="name">渡邉 ひとし</div>
+      </div>
+      <div class="series">
+        <span class="dot"></span>
+        <span class="dot active"></span>
+        <span>新人生戦略シリーズ 第2巻</span>
+      </div>
+      <div class="badge">第2巻</div>
+    </div>
+    <p class="desc">コーラルオレンジのアクセントで活力を表現。角版写真＋キーワードリスト型</p>
+  </div>
+
+  <!-- 案C -->
+  <div class="compare-item">
+    <div class="label">案C：グリーン（成長・リボーン）</div>
+    <div class="cover cover-c">
+      <div class="top-band">
+        <div class="cat">BUSINESS</div>
+        <div class="title-area">
+          <div class="main-title"><em>60歳</em>からの<br>新人生戦略</div>
+          <div class="sub-title">引退ではなく"リボーン"<br>自分軸で次の40年をつくる</div>
+        </div>
+      </div>
+      <div class="photo-area">
+        <img src="第1巻_表紙.png" style="object-position: 10% 55%; transform: scale(2.8);">
+      </div>
+      <div class="content-area">
+        <div class="concept">── <em>人生は二度おいしい</em> ──</div>
+        <div class="pills">
+          <span>リボーン</span>
+          <span>老益</span>
+          <span>思い出の種を植える</span>
+          <span>量から質</span>
+          <span>人生二回論</span>
+          <span>Priority</span>
+        </div>
+      </div>
+      <div class="author-area">
+        <div class="label">著</div>
+        <div class="name">渡邉 ひとし</div>
+      </div>
+      <div class="bottom-bar">
+        <span>新人生戦略シリーズ</span>
+        <span class="hl">第2巻</span>
+      </div>
+    </div>
+    <p class="desc">グリーンで「成長・再生」を表現。斜めカットのモダンレイアウト</p>
+  </div>
+
+</div>
+
+<p class="footer">※ 写真は第1巻表紙より仮配置。正式版では高解像度の著者写真に差し替え</p>
+
+</body>
+</html>

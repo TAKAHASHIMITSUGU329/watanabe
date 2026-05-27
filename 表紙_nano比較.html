@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2巻 表紙デザイン比較（Nano Banana生成）</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+    background: #f0ece6;
+    padding: 48px 24px;
+    color: #333;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #1a2744;
+    margin-bottom: 8px;
+  }
+  .header p {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.10);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  }
+
+  .card .img-wrap {
+    padding: 20px 20px 0;
+    background: #f7f4ef;
+    display: flex;
+    justify-content: center;
+  }
+  .card .img-wrap img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 4px;
+    box-shadow: 2px 4px 16px rgba(0,0,0,0.18);
+  }
+
+  .card .info {
+    padding: 20px 24px 24px;
+  }
+
+  .card .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .tag-ref { background: #e0e0e0; color: #666; }
+  .tag-a { background: #fdecd0; color: #b07820; }
+  .tag-b { background: #d0e8fd; color: #2060a0; }
+  .tag-c { background: #d4f0d4; color: #307830; }
+
+  .card h2 {
+    font-size: 17px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    color: #1a2744;
+  }
+
+  .card .desc {
+    font-size: 13px;
+    line-height: 1.75;
+    color: #666;
+    margin-bottom: 12px;
+  }
+
+  .card ul {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #555;
+    padding-left: 16px;
+  }
+  .card ul li { margin-bottom: 2px; }
+
+  .card .merit {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #f9f6f1;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #8b6f47;
+    font-weight: 600;
+  }
+
+  .footer-note {
+    max-width: 1400px;
+    margin: 40px auto 0;
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 32px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .footer-note h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a2744;
+    border-left: 4px solid #c4975a;
+    padding-left: 10px;
+  }
+  .footer-note table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .footer-note th, .footer-note td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+  .footer-note th {
+    background: #f9f6f1;
+    color: #6b5a4e;
+    font-weight: 600;
+    width: 80px;
+  }
+
+  .page-footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 11px;
+    color: #bbb;
+  }
+
+  @media (max-width: 1100px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; max-width: 380px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>第2巻「60歳からの新人生戦略」表紙デザイン比較</h1>
+  <p>Nano Banana Pro（Google Gemini）で生成 ― 第1巻デザインを踏襲した3案</p>
+</div>
+
+<div class="grid">
+
+  <!-- 第1巻 参考 -->
+  <div class="card">
+    <div class="img-wrap">
+      <img src="第1巻_表紙.png" alt="第1巻 表紙">
+    </div>
+    <div class="info">
+      <span class="tag tag-ref">参考：第1巻（既刊）</span>
+      <h2>中小企業経営者のための持続的成長戦略</h2>
+      <p class="desc">現行の第1巻デザイン。第2巻はこのデザインとの統一感を重視して作成。</p>
+      <ul>
+        <li>ネイビー×オレンジの配色</li>
+        <li>著者写真（丸枠）</li>
+        <li>キャッチコピー×3の構成</li>
+        <li>下部にPDF特典バッジ</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 案A -->
+  <div class="card">
+    <div class="img-wrap">
+      <img src="nano_v1.png" alt="案A">
+    </div>
+    <div class="info">
+      <span class="tag tag-a">案 A：忠実踏襲型</span>
+      <h2>第1巻と最も統一感のあるデザイン</h2>
+      <p class="desc">第1巻のレイアウト・配色・構図をほぼそのまま踏襲。シリーズとしての一貫性が最も高い。</p>
+      <ul>
+        <li>レイアウトが第1巻と最も近い</li>
+        <li>著者写真の配置も踏襲</li>
+        <li>キャッチコピー3点を同じ位置に配置</li>
+        <li>PDF特典・バッジも継承</li>
+      </ul>
+      <div class="merit">シリーズの統一感を最優先する場合に最適</div>
+    </div>
+  </div>
+
+  <!-- 案B -->
+  <div class="card">
+    <div class="img-wrap">
+      <img src="nano_v2.png" alt="案B">
+    </div>
+    <div class="info">
+      <span class="tag tag-b">案 B：ゴールドリボン型</span>
+      <h2>華やかさをプラスしたデザイン</h2>
+      <p class="desc">ゴールドのリボン装飾を加え、「待望の第2巻」感を演出。華やかさと格調を両立。</p>
+      <ul>
+        <li>ゴールドリボンで第2巻の特別感</li>
+        <li>背景がよりダークネイビーで引き締まった印象</li>
+        <li>「第2巻」の表記が大きく目立つ</li>
+        <li>新刊バッジで注目度アップ</li>
+      </ul>
+      <div class="merit">Kindleストアでの目立ちやすさを重視する場合に最適</div>
+    </div>
+  </div>
+
+  <!-- 案C -->
+  <div class="card">
+    <div class="img-wrap">
+      <img src="nano_v3.png" alt="案C">
+    </div>
+    <div class="info">
+      <span class="tag tag-c">案 C：情報充実型</span>
+      <h2>キーワードを4点に増やしたデザイン</h2>
+      <p class="desc">「量から質への転換」を4つ目のキャッチに追加。下部に「待望の第2巻 発表」を大きく配置。</p>
+      <ul>
+        <li>キャッチコピーが4点で情報量アップ</li>
+        <li>「待望の第2巻 発表」の大きな見出し</li>
+        <li>下部バナーで書籍の実績をアピール</li>
+        <li>全体的に情報が整理されている</li>
+      </ul>
+      <div class="merit">書籍の内容をより多く伝えたい場合に最適</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-note">
+  <h3>3案の比較まとめ</h3>
+  <table>
+    <tr>
+      <th></th>
+      <th>案A 忠実踏襲型</th>
+      <th>案B ゴールドリボン型</th>
+      <th>案C 情報充実型</th>
+    </tr>
+    <tr>
+      <th>統一感</th>
+      <td>★★★ 第1巻とほぼ同じ</td>
+      <td>★★☆ 華やかさをプラス</td>
+      <td>★★☆ 構成を発展</td>
+    </tr>
+    <tr>
+      <th>目立ち度</th>
+      <td>★★☆ 安定感</td>
+      <td>★★★ ゴールド装飾で目立つ</td>
+      <td>★★★ 情報量で目を引く</td>
+    </tr>
+    <tr>
+      <th>情報量</th>
+      <td>★★☆ 3ポイント</td>
+      <td>★★☆ 3ポイント＋装飾</td>
+      <td>★★★ 4ポイント＋バナー</td>
+    </tr>
+    <tr>
+      <th>おすすめ</th>
+      <td>シリーズ統一感重視</td>
+      <td>新刊感・華やかさ重視</td>
+      <td>内容訴求力重視</td>
+    </tr>
+  </table>
+</div>
+
+<p class="page-footer">Generated with Nano Banana Pro (Google Gemini) / 2026-04-07</p>
+
+</body>
+</html>

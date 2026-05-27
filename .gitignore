@@ -1,0 +1,5 @@
+.DS_Store
+.codex/
+
+# GitHub's normal file limit is 100MB. Keep the transcript/audio, exclude the large video.
+20260420/GMT20260420-015833_Recording_1920x1080.mp4

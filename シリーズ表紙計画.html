@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>渡邉ひとし「新人生戦略」シリーズ 表紙デザイン計画</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&family=Noto+Serif+JP:wght@700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans JP", sans-serif;
+    background: #f2efe9;
+    color: #333;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, #1a2744 0%, #1e3a5f 50%, #1a4050 100%);
+    padding: 56px 24px 48px;
+    text-align: center;
+    color: #fff;
+  }
+  .hero h1 {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .hero h1 em { font-style: normal; color: #f0a848; }
+  .hero p { font-size: 14px; color: #99b0cc; margin-bottom: 4px; }
+
+  /* ===== SECTION ===== */
+  section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+  section h2 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #1a2744;
+    margin-bottom: 8px;
+    border-left: 5px solid #c4975a;
+    padding-left: 14px;
+  }
+  section .section-desc {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 28px;
+  }
+
+  /* ===== 第2巻 比較グリッド ===== */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  }
+  .card .img-wrap {
+    padding: 16px 16px 0;
+    background: #f7f4ef;
+    display: flex;
+    justify-content: center;
+  }
+  .card .img-wrap img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 4px;
+    box-shadow: 2px 3px 12px rgba(0,0,0,0.15);
+  }
+  .card .info { padding: 16px 20px 20px; }
+  .card .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 16px;
+    margin-bottom: 8px;
+  }
+  .tag-ref { background: #e4e0da; color: #777; }
+  .tag-a { background: #d0ecec; color: #1a6060; }
+  .tag-b { background: #dce8d0; color: #3a6830; }
+  .tag-c { background: #e8dcd0; color: #705830; }
+  .card h3 { font-size: 15px; font-weight: 900; color: #1a2744; margin-bottom: 6px; }
+  .card .desc { font-size: 12px; line-height: 1.7; color: #666; margin-bottom: 10px; }
+  .card ul { font-size: 11px; line-height: 1.8; color: #555; padding-left: 16px; }
+  .card .verdict {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #f5f1eb;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #8b6f47;
+  }
+
+  /* ===== 全5巻シリーズ俯瞰 ===== */
+  .series-overview {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 36px;
+    margin-top: 8px;
+  }
+  .series-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .vol-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    position: relative;
+  }
+  .vol-card:hover { transform: scale(1.03); }
+  .vol-card.has-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 2px 3px 14px rgba(0,0,0,0.18);
+  }
+
+  /* モックアップ（第3〜5巻） */
+  .vol-mock {
+    aspect-ratio: 512 / 800;
+    border-radius: 12px;
+    box-shadow: 2px 3px 14px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .vol-mock .bg-motif {
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    font-size: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .vol-mock .cat {
+    font-size: 9px;
+    letter-spacing: 3px;
+    opacity: 0.7;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .vol-mock .title {
+    font-family: "Noto Serif JP", serif;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    position: relative;
+  }
+  .vol-mock .sub {
+    font-size: 9px;
+    opacity: 0.8;
+    line-height: 1.5;
+    position: relative;
+  }
+  .vol-mock .vol-num {
+    position: absolute;
+    bottom: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0.6;
+  }
+  .mock-3 {
+    background: linear-gradient(135deg, #5a1a2a, #8a2040);
+    color: #f5e0c0;
+  }
+  .mock-4 {
+    background: linear-gradient(135deg, #1a4030, #2a6848);
+    color: #e8f0d0;
+  }
+  .mock-5 {
+    background: linear-gradient(135deg, #2a1a50, #4a2878);
+    color: #e0d8f0;
+  }
+
+  .vol-label {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #555;
+  }
+  .vol-sublabel {
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    margin-top: 2px;
+  }
+
+  /* ===== カラースキーム表 ===== */
+  .color-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    font-size: 13px;
+  }
+  .color-table th, .color-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    vertical-align: middle;
+  }
+  .color-table th {
+    background: #f9f6f1;
+    font-weight: 700;
+    color: #555;
+  }
+  .color-table td:first-child { font-weight: 700; }
+  .color-swatch {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    vertical-align: middle;
+    margin-right: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+  .color-pair {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ===== ロードマップ ===== */
+  .roadmap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .rm-item {
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 10px;
+    min-width: 160px;
+  }
+  .rm-item .age { font-size: 20px; font-weight: 900; }
+  .rm-item .phase { font-size: 11px; margin-top: 4px; opacity: 0.8; }
+  .rm-item .meaning { font-size: 10px; margin-top: 2px; opacity: 0.6; }
+  .rm-arrow {
+    font-size: 24px;
+    color: #ccc;
+    margin: 0 4px;
+  }
+  .rm-1 { background: #1a2744; color: #f0c070; }
+  .rm-2 { background: #1a4050; color: #f0a060; }
+  .rm-3 { background: #5a1a2a; color: #f5e0c0; }
+  .rm-4 { background: #1a4030; color: #c0e8a0; }
+  .rm-5 { background: #2a1a50; color: #d0c0f0; }
+
+  .footer {
+    text-align: center;
+    padding: 32px;
+    font-size: 11px;
+    color: #bbb;
+  }
+
+  @media (max-width: 1100px) {
+    .compare-grid { grid-template-columns: repeat(2, 1fr); }
+    .series-row { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .compare-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+    .series-row { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <p>渡邉ひとし 著</p>
+  <h1>「<em>新人生戦略</em>」シリーズ 表紙デザイン計画</h1>
+  <p>全5巻 ― 人生二回論に基づくカラー展開 ― Nano Banana Pro生成</p>
+</div>
+
+<!-- ===== 第2巻 比較 ===== -->
+<section>
+  <h2>第2巻 表紙デザイン比較（3案）</h2>
+  <p class="section-desc">第1巻のレイアウトを踏襲しつつ、ティールブルー系のカラーで差別化。第1巻と並べて統一感を確認</p>
+
+  <div class="compare-grid">
+    <!-- 第1巻 -->
+    <div class="card">
+      <div class="img-wrap">
+        <img src="第1巻_表紙.png" alt="第1巻">
+      </div>
+      <div class="info">
+        <span class="tag tag-ref">参考：第1巻（既刊）</span>
+        <h3>中小企業経営者のための持続的成長戦略</h3>
+        <p class="desc">ネイビー×オレンジ。シリーズの基準デザイン。</p>
+        <ul>
+          <li>20〜50代 VSOP</li>
+          <li>ネイビー背景</li>
+          <li>三角形の装飾パターン</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 案A -->
+    <div class="card">
+      <div class="img-wrap">
+        <img src="nano_series_a.png" alt="案A">
+      </div>
+      <div class="info">
+        <span class="tag tag-a">案A：ティールグリーン</span>
+        <h3>落ち着いた青緑で「リボーン」を表現</h3>
+        <p class="desc">第1巻のネイビーからティールグリーンへ。穏やかな再出発のイメージ。</p>
+        <ul>
+          <li>深い青緑の背景で差別化</li>
+          <li>レイアウトは忠実に踏襲</li>
+          <li>「第2巻」表記を明確に配置</li>
+        </ul>
+        <div class="verdict">穏やかなトーンで品格を保ちたい場合に</div>
+      </div>
+    </div>
+
+    <!-- 案B -->
+    <div class="card">
+      <div class="img-wrap">
+        <img src="nano_series_b.png" alt="案B">
+      </div>
+      <div class="info">
+        <span class="tag tag-b">案B：新芽モチーフ</span>
+        <h3>発芽のイラストで「種を植える」を表現</h3>
+        <p class="desc">背景に新芽のモチーフを追加。「60」の数字アクセントでインパクト。</p>
+        <ul>
+          <li>種→芽のグラフィックで差別化</li>
+          <li>「60」が大きく目立つ</li>
+          <li>「シリーズ第2巻」の表記が明確</li>
+        </ul>
+        <div class="verdict">コンセプトを視覚的に伝えたい場合に</div>
+      </div>
+    </div>
+
+    <!-- 案C -->
+    <div class="card">
+      <div class="img-wrap">
+        <img src="nano_series_c.png" alt="案C">
+      </div>
+      <div class="info">
+        <span class="tag tag-c">案C：ウォームティール</span>
+        <h3>温かみのあるティール×コーラルの配色</h3>
+        <p class="desc">ティールベースにコーラル系のアクセント。温かみと新しさの両立。</p>
+        <ul>
+          <li>温かい色味で前向きな印象</li>
+          <li>第1巻とのバランスが良い</li>
+          <li>キャッチコピーが読みやすい</li>
+        </ul>
+        <div class="verdict">第1巻との調和と差別化のバランス重視</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== シリーズ全巻俯瞰 ===== -->
+<section>
+  <h2>シリーズ全5巻 カラー展開プレビュー</h2>
+  <p class="section-desc">人生二回論に基づき、各年代の「季節」をカラーで表現。全巻を並べた時のシリーズ感を確認</p>
+
+  <div class="series-overview">
+
+    <!-- ロードマップ -->
+    <div class="roadmap">
+      <div class="rm-item rm-1">
+        <div class="age">20-50代</div>
+        <div class="phase">一巡目の人生</div>
+        <div class="meaning">VSOP</div>
+      </div>
+      <div class="rm-arrow">→</div>
+      <div class="rm-item rm-2">
+        <div class="age">60代</div>
+        <div class="phase">二度目の学生期</div>
+        <div class="meaning">リボーン</div>
+      </div>
+      <div class="rm-arrow">→</div>
+      <div class="rm-item rm-3">
+        <div class="age">70代</div>
+        <div class="phase">二度目の青春</div>
+        <div class="meaning">挑戦</div>
+      </div>
+      <div class="rm-arrow">→</div>
+      <div class="rm-item rm-4">
+        <div class="age">80代</div>
+        <div class="phase">二度目の花</div>
+        <div class="meaning">収穫</div>
+      </div>
+      <div class="rm-arrow">→</div>
+      <div class="rm-item rm-5">
+        <div class="age">90代〜</div>
+        <div class="phase">結晶の境地</div>
+        <div class="meaning">光</div>
+      </div>
+    </div>
+
+    <!-- 表紙サムネイル -->
+    <div class="series-row">
+      <!-- 第1巻 -->
+      <div>
+        <div class="vol-card has-image">
+          <img src="第1巻_表紙.png" alt="第1巻">
+        </div>
+        <div class="vol-label">第1巻（既刊）</div>
+        <div class="vol-sublabel">ネイビー × オレンジ</div>
+      </div>
+
+      <!-- 第2巻 -->
+      <div>
+        <div class="vol-card has-image">
+          <img src="nano_series_b.png" alt="第2巻" style="border-radius:12px; box-shadow:2px 3px 14px rgba(0,0,0,0.18);">
+        </div>
+        <div class="vol-label">第2巻（案B例）</div>
+        <div class="vol-sublabel">ティールブルー × オレンジ</div>
+      </div>
+
+      <!-- 第3巻 モック -->
+      <div>
+        <div class="vol-mock mock-3">
+          <div class="bg-motif">&#9681;</div>
+          <div class="cat">BUSINESS</div>
+          <div class="title">70歳からの<br>挑戦戦略</div>
+          <div class="sub">トライアンドエラーで<br>二度目の青春を生きる</div>
+          <div class="vol-num">第3巻</div>
+        </div>
+        <div class="vol-label">第3巻（構想中）</div>
+        <div class="vol-sublabel">ボルドー × ゴールド</div>
+      </div>
+
+      <!-- 第4巻 モック -->
+      <div>
+        <div class="vol-mock mock-4">
+          <div class="bg-motif">&#10048;</div>
+          <div class="cat">BUSINESS</div>
+          <div class="title">80歳からの<br>収穫戦略</div>
+          <div class="sub">二度目の花が<br>咲く時</div>
+          <div class="vol-num">第4巻</div>
+        </div>
+        <div class="vol-label">第4巻（構想中）</div>
+        <div class="vol-sublabel">フォレストグリーン × シャンパンゴールド</div>
+      </div>
+
+      <!-- 第5巻 モック -->
+      <div>
+        <div class="vol-mock mock-5">
+          <div class="bg-motif">&#10022;</div>
+          <div class="cat">BUSINESS</div>
+          <div class="title">90歳からの<br>結晶戦略</div>
+          <div class="sub">光を掴み<br>後世に伝える</div>
+          <div class="vol-num">第5巻</div>
+        </div>
+        <div class="vol-label">第5巻（構想中）</div>
+        <div class="vol-sublabel">ロイヤルパープル × シルバー</div>
+      </div>
+    </div>
+
+    <!-- カラースキーム表 -->
+    <table class="color-table">
+      <tr>
+        <th>巻</th>
+        <th>年代</th>
+        <th>メインカラー</th>
+        <th>アクセントカラー</th>
+        <th>モチーフ</th>
+        <th>テーマ</th>
+      </tr>
+      <tr>
+        <td>第1巻</td>
+        <td>20〜50代</td>
+        <td><div class="color-pair"><span class="color-swatch" style="background:#1a2744"></span>ネイビー</div></td>
+        <td><div class="color-pair"><span class="color-swatch" style="background:#e08030"></span>オレンジ</div></td>
+        <td>三角形（成長）</td>
+        <td>VSOP・持続的成長</td>
+      </tr>
+      <tr>
+        <td>第2巻</td>
+        <td>60代</td>
+        <td><div class="color-pair"><span class="color-swatch" style="background:#1a4050"></span>ティールブルー</div></td>
+        <td><div class="color-pair"><span class="color-swatch" style="background:#e09040"></span>サンライズオレンジ</div></td>
+        <td>種→芽（リボーン）</td>
+        <td>リボーン・自分軸</td>
+      </tr>
+      <tr>
+        <td>第3巻</td>
+        <td>70代</td>
+        <td><div class="color-pair"><span class="color-swatch" style="background:#6a1a30"></span>ボルドー</div></td>
+        <td><div class="color-pair"><span class="color-swatch" style="background:#c8a040"></span>ゴールド</div></td>
+        <td>道・階段（挑戦）</td>
+        <td>トライアンドエラー</td>
+      </tr>
+      <tr>
+        <td>第4巻</td>
+        <td>80代</td>
+        <td><div class="color-pair"><span class="color-swatch" style="background:#1a5038"></span>フォレストグリーン</div></td>
+        <td><div class="color-pair"><span class="color-swatch" style="background:#c8b060"></span>シャンパンゴールド</div></td>
+        <td>花・樹木（収穫）</td>
+        <td>果実が実る</td>
+      </tr>
+      <tr>
+        <td>第5巻</td>
+        <td>90代〜</td>
+        <td><div class="color-pair"><span class="color-swatch" style="background:#3a1a60"></span>ロイヤルパープル</div></td>
+        <td><div class="color-pair"><span class="color-swatch" style="background:#a0a0b0"></span>シルバー</div></td>
+        <td>光の放射（結晶）</td>
+        <td>光・サムシンググレート</td>
+      </tr>
+    </table>
+
+  </div>
+</section>
+
+<!-- ===== デザインシステム説明 ===== -->
+<section>
+  <h2>デザインシステム：共通要素と変化要素</h2>
+  <p class="section-desc">シリーズ全巻で統一する要素と、巻ごとに変化させる要素</p>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+    <div style="background:#fff; border-radius:14px; padding:28px; box-shadow:0 4px 16px rgba(0,0,0,0.06);">
+      <h3 style="font-size:16px; color:#1a2744; margin-bottom:14px; border-bottom:2px solid #c4975a; padding-bottom:8px;">
+        共通要素（統一感）
+      </h3>
+      <ul style="font-size:13px; line-height:2; color:#555; padding-left:18px;">
+        <li>「BUSINESS」ラベル（上部）</li>
+        <li>タイトルのフォントファミリー・サイズ感</li>
+        <li>著者写真の丸枠配置</li>
+        <li>キャッチコピー3〜4点の横帯レイアウト</li>
+        <li>著者名の表記位置</li>
+        <li>下部のシリーズ表記・バッジエリア</li>
+        <li>全体の縦横比（Kindle表紙規格）</li>
+      </ul>
+    </div>
+    <div style="background:#fff; border-radius:14px; padding:28px; box-shadow:0 4px 16px rgba(0,0,0,0.06);">
+      <h3 style="font-size:16px; color:#1a2744; margin-bottom:14px; border-bottom:2px solid #e08030; padding-bottom:8px;">
+        変化要素（差別化）
+      </h3>
+      <ul style="font-size:13px; line-height:2; color:#555; padding-left:18px;">
+        <li><strong>メインカラー</strong> ― 巻ごとに「人生の季節」を表現</li>
+        <li><strong>アクセントカラー</strong> ― キャッチコピー帯・バッジの色</li>
+        <li><strong>背景モチーフ</strong> ― 各巻のテーマを象徴するシルエット</li>
+        <li><strong>タイトル・サブタイトル</strong> ― 年代とテーマに応じた文言</li>
+        <li><strong>キャッチコピー</strong> ― 各巻の核心メッセージ</li>
+        <li><strong>著者写真</strong> ― 同一人物・別ショットも可</li>
+        <li><strong>巻数表記</strong> ― 「第◯巻」で位置を明示</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  Generated with Nano Banana Pro (Google Gemini) / 2026-04-07<br>
+  渡邉ひとし「新人生戦略」シリーズ ― 表紙デザイン計画書
+</div>
+
+</body>
+</html>
