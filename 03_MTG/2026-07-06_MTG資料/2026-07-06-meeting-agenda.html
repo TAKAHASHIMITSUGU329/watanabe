@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-07-06 渡邉社長MTG アジェンダ</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #626b7b;
+      --line: #d9dee8;
+      --paper: #f7f8fb;
+      --panel: #ffffff;
+      --navy: #1d3761;
+      --green: #1f7a5a;
+      --deep-green: #155f49;
+      --gold: #b78a2c;
+      --red: #a8463d;
+      --blue-soft: #e9f0f8;
+      --green-soft: #e9f6f0;
+      --gold-soft: #fbf4e5;
+      --red-soft: #f8ecea;
+      --shadow: 0 14px 35px rgba(23, 32, 51, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.75;
+    }
+    a { color: var(--green); font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { background: #fff; border-bottom: 1px solid var(--line); }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: end;
+      padding: 52px 0 36px;
+    }
+    .eyebrow { margin: 0 0 12px; color: var(--green); font-size: 14px; font-weight: 800; }
+    h1 { margin: 0; font-size: clamp(34px, 5vw, 58px); line-height: 1.12; letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 26px; line-height: 1.35; letter-spacing: 0; }
+    h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; letter-spacing: 0; }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 8px 0 0; padding-left: 1.3em; }
+    li { margin: 5px 0; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { padding: 12px 14px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { color: var(--deep-green); background: var(--green-soft); font-weight: 900; }
+    main { padding: 34px 0 70px; }
+    section { margin-top: 34px; }
+    .lead { margin: 18px 0 0; color: var(--muted); font-size: 17px; }
+    .meta {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--green-soft);
+    }
+    .meta dl { display: grid; grid-template-columns: 86px 1fr; gap: 8px 14px; margin: 0; font-size: 15px; }
+    .meta dt { color: var(--deep-green); font-weight: 800; }
+    .meta dd { margin: 0; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      color: var(--navy);
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .pill.primary { color: #fff; background: var(--green); border-color: var(--green); }
+    .grid { display: grid; gap: 18px; }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .flat {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .highlight { padding: 18px 20px; border-left: 5px solid var(--green); border-radius: 8px; background: var(--green-soft); }
+    .note { padding: 18px 20px; border-left: 5px solid var(--gold); border-radius: 8px; background: var(--gold-soft); }
+    .warning { padding: 18px 20px; border-left: 5px solid var(--red); border-radius: 8px; background: var(--red-soft); }
+    .agenda {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: agenda;
+    }
+    .agenda li {
+      counter-increment: agenda;
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 18px;
+      margin: 0;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .time { color: var(--green); font-size: 15px; font-weight: 900; }
+    .time::before { content: counter(agenda, decimal-leading-zero); display: block; color: var(--navy); font-size: 13px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      margin: 4px 6px 0 0;
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: var(--deep-green);
+      background: var(--green-soft);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .step {
+      min-height: 106px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      font-size: 14px;
+    }
+    .step b { display: block; margin-bottom: 8px; color: var(--green); font-size: 12px; }
+    @media (max-width: 920px) {
+      .hero, .cols-2, .cols-3, .flow { grid-template-columns: 1fr; }
+      .agenda li { grid-template-columns: 1fr; }
+      .meta dl { grid-template-columns: 78px 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">2026-07-06 / Meeting Agenda</p>
+        <h1>AI/DX eラーニング講座<br>販促・収益化アジェンダ</h1>
+        <p class="lead">第3巻をいったん保留し、AI/DX eラーニング講座を事業主軸に据えるための販売導線と7月アクションを決める。</p>
+        <div class="quick-links">
+          <a class="pill primary" href="#goals">本日のゴール</a>
+          <a class="pill" href="#northstar">北極星</a>
+          <a class="pill" href="#line">LINE共有</a>
+          <a class="pill" href="#agenda">アジェンダ</a>
+          <a class="pill" href="#decisions">決定事項</a>
+        </div>
+      </div>
+      <div class="meta">
+        <dl>
+          <dt>日時</dt><dd>2026年7月6日（月）11:00〜12:00</dd>
+          <dt>参加者</dt><dd>高橋、渡邉ひとし</dd>
+          <dt>場所</dt><dd>オンライン（Zoom想定）</dd>
+          <dt>前回</dt><dd>2026年6月22日</dd>
+          <dt>主題</dt><dd>AI/DX eラーニング講座の収益化に向けた販促・導線設計</dd>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <div class="highlight">
+        <h2>本日の位置づけ</h2>
+        <p>前回6月22日MTG後、渡邉社長より「AIとDXのeラーニング講座」の販促活動を事業の主軸に据え、第3巻はいったん保留する方針が共有された。本日はこの新方針を前提に、eラーニング講座をどのように売上化していくかを具体化する。</p>
+      </div>
+    </section>
+
+    <section id="goals">
+      <h2>本日のゴール</h2>
+      <div class="grid cols-2">
+        <div class="panel">
+          <h3>方針確認</h3>
+          <ul>
+            <li>第3巻保留とeラーニング講座優先を確認する</li>
+            <li>西野亮廣氏の「北極星」の考え方を踏まえ、事業の判断軸を確認する</li>
+            <li>事業計画士®︎講座の並行準備の位置づけを決める</li>
+            <li>高橋側の確認点・懸念点を率直に共有する</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>実行設計</h3>
+          <ul>
+            <li>販売対象と優先順位を整理する</li>
+            <li>LP、セミナー、動画、無料体験の役割を決める</li>
+            <li>7月中の成果物と役割分担を決める</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="northstar">
+      <h2>「北極星」の確認</h2>
+      <div class="grid cols-2">
+        <div class="highlight">
+          <h3>仮の北極星案</h3>
+          <p><strong>AIへの不信感や苦手意識を、安心して学び、仕事と経営に活かせる力へ変える。</strong></p>
+          <p>単にeラーニング講座を売るのではなく、誰をどこへ連れていく事業なのかを先に置く。</p>
+        </div>
+        <div class="panel">
+          <h3>確認したい問い</h3>
+          <ul>
+            <li>この講座で誰をどこへ連れていくのか</li>
+            <li>中小企業や個人にとって、どんな未来への入口なのか</li>
+            <li>収益化と理念がズレそうな時、何を判断基準にするのか</li>
+            <li>販路が変わっても、共通して変えない約束は何か</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="line">
+      <h2>LINE共有で確認した重要ポイント</h2>
+      <div class="grid cols-2">
+        <div class="flat">
+          <h3>福利厚生会社・地方銀行</h3>
+          <p>福利厚生会社の営業担当者から、AIへの不信感や苦手意識を越えるセミナー・動画に前向きな反応。「AIに強い福利厚生会社」というブランディング提案も実施。地方銀行の参加増加も確認。</p>
+        </div>
+        <div class="flat">
+          <h3>講座サイト内動画</h3>
+          <p>eラーニング講座サイト内に我々の動画をアップロード可能。「講座サイトの歩き方」動画を置き、リードナーチャリングや離脱防止に活用できる。</p>
+        </div>
+        <div class="flat">
+          <h3>個人向け販売</h3>
+          <p>個人への販売許可を取得。一括払いで販売し、eラーニング講座事業を確立していく方針。</p>
+        </div>
+        <div class="flat">
+          <h3>電通Gの提案フロー</h3>
+          <p>受講対象者、学習目的、解決したい課題をヒアリングし、電通Gが講座・受講順序を整理したカリキュラムを提案する流れをLP等に反映する。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="agenda">
+      <h2>アジェンダ（60分）</h2>
+      <ol class="agenda">
+        <li>
+          <div class="time">5分</div>
+          <div>
+            <h3>方針変更の確認</h3>
+            <p>第3巻はいったん保留し、7月以降はAI/DX eラーニング講座の販促・収益化を主軸にすることでよいか確認する。</p>
+            <span class="tag">第3巻保留</span><span class="tag">eラーニング優先</span>
+          </div>
+        </li>
+        <li>
+          <div class="time">8分</div>
+          <div>
+            <h3>「北極星」の確認</h3>
+            <p>西野亮廣氏の「北極星」の考え方を踏まえ、この事業で誰をどこへ連れていくのか、判断軸を一文で置けるか確認する。</p>
+            <span class="tag">北極星</span><span class="tag">判断軸</span><span class="tag">中核メッセージ</span>
+          </div>
+        </li>
+        <li>
+          <div class="time">8分</div>
+          <div>
+            <h3>販売対象と優先順位</h3>
+            <p>福利厚生会社、地方銀行、中小企業、個人向けB2C、既存メーリングリストのうち、7月にどこから攻めるかを決める。</p>
+            <span class="tag">福利厚生会社</span><span class="tag">地銀</span><span class="tag">B2C</span>
+          </div>
+        </li>
+        <li>
+          <div class="time">8分</div>
+          <div>
+            <h3>無料体験LPの修正方針</h3>
+            <p>北極星、AIへの不信感・苦手意識、目的別講座提案、無料体験後の次アクションをLPにどう反映するかを確認する。</p>
+            <span class="tag">LP</span><span class="tag">無料体験</span>
+          </div>
+        </li>
+        <li>
+          <div class="time">12分</div>
+          <div>
+            <h3>セミナー・動画導線</h3>
+            <p>最初に作る動画、セミナー構成、講座サイト内動画とLP用動画の使い分けを決める。</p>
+            <span class="tag">講座サイトの歩き方</span><span class="tag">動画</span><span class="tag">セミナー</span>
+          </div>
+        </li>
+        <li>
+          <div class="time">7分</div>
+          <div>
+            <h3>価格・販売条件・決済</h3>
+            <p>個人向け一括払い、法人向け3ID以上、福利厚生会社・地銀経由の価格や手数料の考え方を確認する。</p>
+            <span class="tag">価格</span><span class="tag">決済</span>
+          </div>
+        </li>
+        <li>
+          <div class="time">5分</div>
+          <div>
+            <h3>事業計画士®︎講座との接続</h3>
+            <p>eラーニングを主軸にしつつ、事業計画士®︎講座をどこまで見せるか、次のステップとしてどう接続するかを整理する。</p>
+            <span class="tag">並行準備</span><span class="tag">次ステップ</span>
+          </div>
+        </li>
+        <li>
+          <div class="time">7分</div>
+          <div>
+            <h3>7月の実行アクション</h3>
+            <p>LP構成案、動画台本、提案資料ラフ、導線図、必要情報共有の担当と期限を決める。</p>
+            <span class="tag">役割分担</span><span class="tag">7月成果物</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>想定導線</h2>
+      <div class="flow">
+        <div class="step"><b>STEP 1</b>AIへの不信感を解消する無料セミナー</div>
+        <div class="step"><b>STEP 2</b>eラーニング無料体験</div>
+        <div class="step"><b>STEP 3</b>講座サイトの歩き方動画</div>
+        <div class="step"><b>STEP 4</b>課題別おすすめ講座提示</div>
+        <div class="step"><b>STEP 5</b>個別相談またはステップアップ講座</div>
+        <div class="step"><b>STEP 6</b>eラーニング講座の一括販売</div>
+        <div class="step"><b>STEP 7</b>事業計画士®︎講座へ接続</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>販売対象の整理</h2>
+      <table>
+        <thead>
+          <tr><th>対象</th><th>可能性</th><th>論点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>福利厚生会社経由</td><td>既に反応あり</td><td>「AIに強い福利厚生会社」ブランディングを提案できる。</td></tr>
+          <tr><td>地方銀行経由</td><td>会員数増加・参加拡大</td><td>地銀の取引先中小企業向けセミナーとして展開できる可能性。</td></tr>
+          <tr><td>中小企業</td><td>AI不信・苦手意識が課題</td><td>安心して学べる入口設計が必要。</td></tr>
+          <tr><td>個人向けB2C</td><td>販売許可取得済み</td><td>一括払い・LP・無料体験・動画導線が必要。</td></tr>
+          <tr><td>既存メーリングリスト</td><td>渡邉社長の資産</td><td>最初のテスト販売・セミナー集客に使える。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>動画案</h2>
+      <table>
+        <thead>
+          <tr><th>動画</th><th>目的</th><th>想定尺</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>事業の北極星を語る動画</td><td>なぜ今この講座を届けるのかを伝える</td><td>5〜8分</td></tr>
+          <tr><td>講座サイトの歩き方</td><td>初回ログイン後の迷いをなくす</td><td>5〜10分</td></tr>
+          <tr><td>AIが怖くなくなる最初の話</td><td>不信感・苦手意識を下げる</td><td>10〜15分</td></tr>
+          <tr><td>目的別おすすめ学習ルート</td><td>何から学ぶかを示す</td><td>10分</td></tr>
+          <tr><td>中小企業がAIを学ぶ理由</td><td>経営者向けの必要性訴求</td><td>10〜15分</td></tr>
+          <tr><td>福利厚生会社向け提案動画</td><td>AIに強い福利厚生会社ブランディング</td><td>5〜8分</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="decisions">
+      <h2>本日決めたいこと</h2>
+      <div class="grid cols-2">
+        <div class="panel">
+          <ol>
+            <li>7月以降の最優先テーマ</li>
+            <li>第3巻を保留にする範囲</li>
+            <li>eラーニング講座事業の北極星</li>
+            <li>最優先ターゲットの順番</li>
+          </ol>
+        </div>
+        <div class="panel">
+          <ol start="5">
+            <li>無料体験LPの修正方針</li>
+            <li>最初に作る動画</li>
+            <li>無料セミナーから購入までの導線</li>
+            <li>個人向け販売価格・条件</li>
+            <li>7月中の役割分担と成果物</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>7月の実行アクション案</h2>
+      <div class="grid cols-2">
+        <div class="panel">
+          <h3>高橋</h3>
+          <ul>
+            <li>無料体験LPの構成案を整理</li>
+            <li>セミナー導線案を作成</li>
+            <li>「講座サイトの歩き方」動画の台本案を作成</li>
+            <li>福利厚生会社・地銀向けの提案資料ラフを作成</li>
+            <li>eラーニング講座から事業計画士®︎講座への導線図を更新</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>渡邉社長</h3>
+          <ul>
+            <li>無料体験LPの現状URL・修正予定内容を共有</li>
+            <li>個人向け販売条件・価格・決済条件を確認</li>
+            <li>福利厚生会社の上申結果を共有</li>
+            <li>地方銀行会員増加に関する情報を共有</li>
+            <li>講座サイト内に動画をアップする仕様・手順を確認</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>参照資料</h2>
+      <div class="flat">
+        <ul>
+          <li><a href="../2026-06-22_渡邉社長MTG_議事録.md">2026-06-22 議事録</a></li>
+          <li><a href="../2026-06-22_MTG資料/2026-06-22-meeting-minutes.html">2026-06-22 HTML議事録</a></li>
+          <li><a href="../2026-06-22_MTG資料/2026-06-22-meeting-agenda.html">2026-06-22 アジェンダ</a></li>
+          <li><a href="index.html">2026-07-06 MTG資料トップ</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

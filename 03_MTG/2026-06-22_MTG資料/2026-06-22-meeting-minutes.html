@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-06-22 渡邉社長MTG 議事録</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #626b7b;
+      --line: #d9dee8;
+      --paper: #f7f8fb;
+      --panel: #ffffff;
+      --navy: #1d3761;
+      --green: #1f7a5a;
+      --deep-green: #155f49;
+      --gold: #b78a2c;
+      --red: #a8463d;
+      --blue-soft: #e9f0f8;
+      --green-soft: #e9f6f0;
+      --gold-soft: #fbf4e5;
+      --red-soft: #f8ecea;
+      --shadow: 0 14px 35px rgba(23, 32, 51, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.75;
+    }
+    a { color: var(--green); font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { background: #fff; border-bottom: 1px solid var(--line); }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: end;
+      padding: 52px 0 36px;
+    }
+    .eyebrow { margin: 0 0 12px; color: var(--green); font-size: 14px; font-weight: 800; }
+    h1 { margin: 0; font-size: clamp(34px, 5vw, 58px); line-height: 1.12; letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 26px; line-height: 1.35; letter-spacing: 0; }
+    h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; letter-spacing: 0; }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 8px 0 0; padding-left: 1.3em; }
+    li { margin: 5px 0; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { padding: 12px 14px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { color: var(--deep-green); background: var(--green-soft); font-weight: 900; }
+    .lead { margin: 18px 0 0; color: var(--muted); font-size: 17px; }
+    .meta {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--green-soft);
+    }
+    .meta dl { display: grid; grid-template-columns: 96px 1fr; gap: 8px 14px; margin: 0; font-size: 15px; }
+    .meta dt { color: var(--deep-green); font-weight: 800; }
+    .meta dd { margin: 0; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      color: var(--navy);
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .pill.primary { color: #fff; background: var(--green); border-color: var(--green); }
+    main { padding: 34px 0 70px; }
+    section { margin-top: 34px; }
+    .grid { display: grid; gap: 18px; }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .flat {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .highlight { padding: 18px 20px; border-left: 5px solid var(--green); border-radius: 8px; background: var(--green-soft); }
+    .note { padding: 18px 20px; border-left: 5px solid var(--gold); border-radius: 8px; background: var(--gold-soft); }
+    .warning { padding: 18px 20px; border-left: 5px solid var(--red); border-radius: 8px; background: var(--red-soft); }
+    .decision-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .decision-list li {
+      position: relative;
+      margin: 0;
+      padding: 15px 16px 15px 44px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .decision-list li::before {
+      content: "";
+      position: absolute;
+      top: 19px;
+      left: 17px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: inset 0 0 0 4px #fff;
+      border: 2px solid var(--green);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: var(--deep-green);
+      background: var(--green-soft);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .step {
+      min-height: 112px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .step b { display: block; margin-bottom: 8px; color: var(--green); font-size: 13px; }
+    .source {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 900px) {
+      .hero, .cols-2, .cols-3, .flow { grid-template-columns: 1fr; }
+      .meta dl { grid-template-columns: 86px 1fr; }
+      table { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">2026-06-22 / Meeting Minutes</p>
+        <h1>渡邉社長MTG<br>議事録</h1>
+        <p class="lead">第2巻の最終確認、事業計画士講座の訴求設計、Mirai Nextory Businessの導線、第3巻の方向性を整理。</p>
+        <div class="quick-links">
+          <a class="pill primary" href="../2026-07-06_MTG資料/2026-07-06-meeting-agenda.html">本日のアジェンダ</a>
+          <a class="pill primary" href="#decisions">決定事項</a>
+          <a class="pill" href="#actions">Action Items</a>
+          <a class="pill" href="#mirai">Mirai Nextory</a>
+          <a class="pill" href="#volume3">第3巻</a>
+        </div>
+      </div>
+      <div class="meta">
+        <dl>
+          <dt>日時</dt><dd>2026年6月22日（月）11:00頃〜</dd>
+          <dt>参加者</dt><dd>高橋、渡邉ひとし</dd>
+          <dt>所要時間</dt><dd>約52分</dd>
+          <dt>記録</dt><dd>Circleback</dd>
+          <dt>前回</dt><dd>2026年6月9日</dd>
+          <dt>次回</dt><dd>2026年7月6日（月）11:00</dd>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="actions">
+      <h2>Action Items</h2>
+      <table>
+        <thead>
+          <tr><th>担当</th><th>内容</th><th>期限・補足</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag">高橋</span></td>
+            <td>講座導線フローを図にまとめて共有</td>
+            <td>ビジョン型コミュニティ資料をもとに、eラーニング→無料体験→プレセミナー→事業計画士講座への流れを図式化。</td>
+          </tr>
+          <tr>
+            <td><span class="tag">高橋</span></td>
+            <td>7月6日11時の次回MTGをカレンダーに登録</td>
+            <td>次回は第3巻の構成ヒアリングと肉付けを行う。</td>
+          </tr>
+          <tr>
+            <td><span class="tag">渡邉</span></td>
+            <td>第3巻（50代向け）の構成ラフ案を作成して共有</td>
+            <td>次回MTG前に高橋へ共有。</td>
+          </tr>
+          <tr>
+            <td><span class="tag">渡邉</span></td>
+            <td>ビジョン型コミュニティのスライド・PDFを高橋に送る</td>
+            <td>今回の打ち合わせで参照した資料を共有。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="decisions">
+      <h2>決定事項・合意事項</h2>
+      <ul class="decision-list">
+        <li>第2巻「60歳からの新人生戦略」は、大きな構成変更を加えず、最終校正フェーズへ進める。</li>
+        <li>第3巻は <strong>50代向け</strong> をターゲットに設定し、<strong>2026年10月完成</strong> を目処に制作を開始する。</li>
+        <li>事業計画士講座の訴求は、月収訴求を前面に出さず、<strong>「経験知を地域経済の力に変える」</strong> 方向を第一候補にする。</li>
+        <li>講座第1期は、<strong>2026年12月以降開始、15万円前後、5〜6名程度</strong> を基本線とする。</li>
+        <li>Mirai Nextory Businessは、eラーニング単体販売ではなく、セミナー導線の中で教材として組み込む。</li>
+        <li>次回MTGは <strong>2026年7月6日（月）11:00</strong> に実施し、第3巻の構成案と内容の肉付けヒアリングを行う。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>概要</h2>
+      <div class="panel">
+        <p>本日のミーティングでは、第2巻の最終確認、事業計画士講座の訴求メッセージ、講座第1期の募集設計、Mirai Nextory Businessの販売導線、第3巻の方向性について確認した。</p>
+        <p>第2巻については、大きな構成変更は行わず、本文を最終校正フェーズへ進める方針で一致した。表紙、Kindle整形、販売ページ文言は本文FIX後に別枠で進める。</p>
+        <p>事業計画士講座については、前回6月9日の整理を踏まえ、月収訴求に寄せるのではなく、渡邉社長の思想や地域経済活性化の文脈を中心に打ち出す方針を再確認した。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>第2巻の最終確認</h2>
+      <div class="grid cols-3">
+        <div class="flat">
+          <h3>本文</h3>
+          <p>最終校正フェーズへ進められる状態。本日は大きな構成変更を加えない。</p>
+        </div>
+        <div class="flat">
+          <h3>制作まわり</h3>
+          <p>表紙デザイン、Kindle整形、販売ページ文言は本文FIX後に別途進める。</p>
+        </div>
+        <div class="flat">
+          <h3>第3巻への接続</h3>
+          <p>第3巻へのつなぎ文は、シリーズ再設計の確認後に最終調整する。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>事業計画士講座の訴求</h2>
+      <div class="grid cols-2">
+        <div class="highlight">
+          <h3>第一候補</h3>
+          <p><strong>経験知を地域経済の力に変える</strong></p>
+          <p>月収訴求ではなく、渡邉社長の思想、地方経済活性化、経営者支援の文脈を中心に置く。</p>
+        </div>
+        <div class="note">
+          <h3>補助コピー候補</h3>
+          <ul>
+            <li>AI時代に社長の本音を聴ける人材になる</li>
+            <li>地方の経営者を支える第二のキャリアのつくり方</li>
+            <li>経験知を、地域経済を支える力に変える</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>講座第1期の募集設計</h2>
+      <table>
+        <tbody>
+          <tr><th>開始時期</th><td>2026年12月以降</td></tr>
+          <tr><th>第1期価格</th><td>15万円前後</td></tr>
+          <tr><th>第1期人数</th><td>5〜6名程度</td></tr>
+          <tr><th>優先事項</th><td>成果事例の蓄積、丁寧なケア、口コミリスク管理</td></tr>
+          <tr><th>集め方</th><td>電子書籍、無料セミナー、無料診断、個別相談を通じて信頼関係を作ってから丁寧に集める。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="mirai">
+      <h2>Mirai Nextory Business</h2>
+      <div class="grid cols-2">
+        <div class="panel">
+          <h3>活用上の課題</h3>
+          <ul>
+            <li>1,066授業を含む膨大なコンテンツがある。</li>
+            <li>受講者が一人で自習するには量が多く、どこから手をつければよいかわからない。</li>
+            <li>10パターン程度の学習ルートはあるが、顧客ニーズとのズレが生じやすい。</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>運営方針</h3>
+          <ul>
+            <li>受講者のレベルや目的に合わせて、カリキュラムを絞り込んで提示する。</li>
+            <li>宿題形式や定期的な答え合わせを含む、塾的な伴走型運営にする。</li>
+            <li>単体販売ではなく、セミナー導線の教材として組み込む。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>B2B・B2C販売モデル</h2>
+      <div class="grid cols-2">
+        <div class="flat">
+          <h3>B2B</h3>
+          <p>現状は法人向け3ID以上が基本。渡邉社長は今後、B2BとB2Cでスライドを使い分けて提案していく方向。</p>
+        </div>
+        <div class="flat">
+          <h3>B2C</h3>
+          <p>個人向けB2C販売は、決済システムの認証取得が2026年8月まで完了しない。個人向けは一括決済を推奨し、カード会社の分割払いで対応する方向。</p>
+          <p><strong>価格目安:</strong> 年間契約 84,000円 / 半年 60,000円</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>セミナー導線</h2>
+      <div class="flow">
+        <div class="step"><b>STEP 1</b>無料セミナー<br>2時間程度</div>
+        <div class="step"><b>STEP 2</b>URL発行<br>無料体験</div>
+        <div class="step"><b>STEP 3</b>1週間後に<br>再集合</div>
+        <div class="step"><b>STEP 4</b>ステップアップ講座<br>2〜3回</div>
+        <div class="step"><b>STEP 5</b>事業計画士講座へ誘導</div>
+      </div>
+      <div class="note" style="margin-top:18px;">
+        <p>セミナーでは、渡邉社長がマインド・ソフト面を担当し、高橋がAI・ハード面を担当する想定。OECDの「ラーニング・コンパス」を参照し、AIスキルだけでなく人間としてのバランスが重要であるというメッセージを核にする。</p>
+      </div>
+    </section>
+
+    <section id="volume3">
+      <h2>第3巻の方向性</h2>
+      <div class="highlight">
+        <p>第3巻は <strong>50代向け</strong> をターゲットに設定し、<strong>2026年10月完成</strong> を目処に制作する。次回ミーティングで50代向けの構成案と内容の肉付けヒアリングを実施する。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>次回日程</h2>
+      <div class="panel">
+        <h3>2026年7月6日（月）11:00</h3>
+        <p>主な議題: 第3巻の構成案確認、50代向けコンテンツのヒアリング、eラーニング〜事業計画士講座導線の整理。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>関連資料</h2>
+      <div class="flat">
+        <ul>
+          <li><a href="2026-06-22-meeting-agenda.html">2026-06-22 渡邉社長MTG アジェンダ</a></li>
+          <li><a href="../2026-07-06_MTG資料/2026-07-06-meeting-agenda.html">2026-07-06 渡邉社長MTG アジェンダ</a></li>
+          <li><a href="index.html">2026-06-22 MTG資料トップ</a></li>
+          <li><a href="../2026-07-06_MTG資料/index.html">2026-07-06 MTG資料トップ</a></li>
+          <li><a href="../2026-06-09_渡邉社長MTG_議事録_前後半統合版.md">2026-06-09 議事録 前後半統合版</a></li>
+          <li><a href="https://circleback.ai/ja/meetings/NlI1aGDFmLs5NOKKhQbdI?tab=transcript">Circleback 記録</a></li>
+        </ul>
+        <p class="source">本HTMLは、Circlebackの自動ノートおよび文字起こしタブをもとに作成した議事録MarkdownをHTML化したものです。</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
