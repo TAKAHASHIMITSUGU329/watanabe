@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-07-06 渡邉社長MTG 議事メモ</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #626b7b;
+      --line: #d9dee8;
+      --paper: #f7f8fb;
+      --panel: #ffffff;
+      --navy: #1d3761;
+      --green: #1f7a5a;
+      --deep-green: #155f49;
+      --gold: #b78a2c;
+      --red: #a8463d;
+      --blue-soft: #e9f0f8;
+      --green-soft: #e9f6f0;
+      --gold-soft: #fbf4e5;
+      --red-soft: #f8ecea;
+      --shadow: 0 14px 35px rgba(23, 32, 51, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.75;
+    }
+    a { color: var(--green); font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { background: #fff; border-bottom: 1px solid var(--line); }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: end;
+      padding: 52px 0 36px;
+    }
+    .eyebrow { margin: 0 0 12px; color: var(--green); font-size: 14px; font-weight: 800; }
+    h1 { margin: 0; font-size: clamp(34px, 5vw, 58px); line-height: 1.12; letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 26px; line-height: 1.35; letter-spacing: 0; }
+    h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; letter-spacing: 0; }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 8px 0 0; padding-left: 1.3em; }
+    li { margin: 5px 0; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { padding: 12px 14px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { color: var(--deep-green); background: var(--green-soft); font-weight: 900; }
+    main { padding: 34px 0 70px; }
+    section { margin-top: 34px; }
+    .lead { margin: 18px 0 0; color: var(--muted); font-size: 17px; }
+    .meta {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--green-soft);
+    }
+    .meta dl { display: grid; grid-template-columns: 96px 1fr; gap: 8px 14px; margin: 0; font-size: 15px; }
+    .meta dt { color: var(--deep-green); font-weight: 800; }
+    .meta dd { margin: 0; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      color: var(--navy);
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .pill.primary { color: #fff; background: var(--green); border-color: var(--green); }
+    .grid { display: grid; gap: 18px; }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .flat {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .highlight { padding: 18px 20px; border-left: 5px solid var(--green); border-radius: 8px; background: var(--green-soft); }
+    .note { padding: 18px 20px; border-left: 5px solid var(--gold); border-radius: 8px; background: var(--gold-soft); }
+    .warning { padding: 18px 20px; border-left: 5px solid var(--red); border-radius: 8px; background: var(--red-soft); }
+    .decision-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .decision-list li {
+      position: relative;
+      margin: 0;
+      padding: 15px 16px 15px 44px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .decision-list li::before {
+      content: "";
+      position: absolute;
+      top: 19px;
+      left: 17px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: inset 0 0 0 4px #fff;
+      border: 2px solid var(--green);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: var(--deep-green);
+      background: var(--green-soft);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .asset-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .asset-list li {
+      margin: 0;
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .asset-list strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--green);
+    }
+    .asset-list span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .preview {
+      display: block;
+      width: 100%;
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    @media (max-width: 900px) {
+      .hero, .cols-2, .cols-3 { grid-template-columns: 1fr; }
+      .meta dl { grid-template-columns: 86px 1fr; }
+      table { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">2026-07-06 / Meeting Memo</p>
+        <h1>渡邉社長MTG<br>議事メモ</h1>
+        <p class="lead">第3巻保留後の方針確認、eラーニングと講座ビジネスの一体化、無料コンテンツ、コアメンバー形成、ラジオ活用を整理。</p>
+        <div class="quick-links">
+          <a class="pill primary" href="2026-07-06-meeting-agenda.html">本日のアジェンダ</a>
+          <a class="pill" href="#actions">Action Items</a>
+          <a class="pill" href="#decisions">決定事項</a>
+          <a class="pill" href="#radio">ラジオ活用</a>
+          <a class="pill" href="#next">次回</a>
+        </div>
+      </div>
+      <div class="meta">
+        <dl>
+          <dt>日時</dt><dd>2026年7月6日（月）11:00頃〜</dd>
+          <dt>参加者</dt><dd>高橋、渡邉ひとし</dd>
+          <dt>所要時間</dt><dd>約58分</dd>
+          <dt>記録</dt><dd>Circleback</dd>
+          <dt>前回</dt><dd>2026年6月22日</dd>
+          <dt>次回</dt><dd>2026年7月20日（月）11:00</dd>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="actions">
+      <h2>Action Items</h2>
+      <table>
+        <thead>
+          <tr><th>担当</th><th>内容</th><th>期限・補足</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tag">高橋</span></td><td>次回MTGをカレンダーに登録</td><td>2026年7月20日（月）11:00</td></tr>
+          <tr><td><span class="tag">高橋</span></td><td>講座ビジネス立ち上げに向けた戦略・演出プランを作成</td><td>12月末〜1月スタートを目標に、ラジオ、ブログ、電子書籍、eラーニングをどう組み合わせるかを整理。</td></tr>
+          <tr><td><span class="tag">高橋</span></td><td>note・電子書籍コンテンツ発信の構成・タイミングをアドバイス</td><td>ノウハウ記事と人物像・考え方を交互に出す構成、第1章から小出しにするタイミング等を提案。</td></tr>
+          <tr><td><span class="tag">渡邉</span></td><td>ミッションを意識したブログ記事を書き始める</td><td>ノウハウ記事に加えて、北極星（ミッション）を意識した記事を意図的に書く。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="decisions">
+      <h2>決定事項・合意事項</h2>
+      <ul class="decision-list">
+        <li>第3巻の制作はいったん保留し、eラーニング講座と事業計画士講座ビジネスの収益化を最優先に切り替える。</li>
+        <li>eラーニング講座は単体販売商品ではなく、講座ビジネス全体を支える「武器の一つ」として組み込む。</li>
+        <li>実績や無料コンテンツがない状態での単体販売より、認知拡大・無料コンテンツ・コミュニティづくりを優先する。</li>
+        <li>12月末〜1月スタートを目標に、講座ビジネス全体の導線を逆算して設計する。</li>
+        <li>5〜10人程度のコアメンバーを集め、「第0期生募集」「立ち上げ仲間募集」のような形でスタートする。</li>
+        <li>富士産経グループ系列のラジオ番組枠を、ブランディング・発信・コミュニティ形成に活用する。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>概要</h2>
+      <div class="panel">
+        <p>本日のミーティングでは、前回6月22日の振り返りを踏まえ、第3巻制作をいったん保留し、eラーニング講座と事業計画士講座ビジネスの収益化を最優先にする方針を確認した。</p>
+        <p>渡邉社長からは、リザーブストック上でStripeとPayPalの決済設定が完了したこと、富士産経グループ系列のラジオ番組枠へ申し込み済みであること、noteや電子書籍コンテンツを無料公開して認知拡大に使う構想が共有された。</p>
+        <p>高橋からは、eラーニングを講座ビジネスの一部として組み込み、12月末〜1月の開始に向けて無料コンテンツ、発信、コミュニティ、決済、講座導線を一体で設計すべきだと提案した。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>前回振り返りと方針転換</h2>
+      <div class="grid cols-2">
+        <div class="flat">
+          <h3>第3巻は保留</h3>
+          <p>第3巻を続けると10月時点で講座ビジネス側の進捗が薄くなる懸念が明確になり、講座ビジネス収益化を優先する方針に切り替えた。</p>
+        </div>
+        <div class="flat">
+          <h3>講座ビジネスの定義</h3>
+          <p>eラーニング講座は教材、講座ビジネスは夢と収益が合わさったものとして整理。両者を一体で構築する。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>決済システム</h2>
+      <div class="highlight">
+        <p>リザーブストック上でStripeとPayPalの設定が7月5日に完了。Stripeはコンビニ決済、カード、デビットカード、サブスク（分割払い）に対応しており、個人向け販売の購入ハードルを下げる。銀行振込を追加すれば、決済手段はほぼ揃う見通し。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>eラーニングと講座ビジネスの一体化</h2>
+      <div class="grid cols-2">
+        <div class="panel">
+          <h3>課題</h3>
+          <ul>
+            <li>単体販売だけでは購入されにくい</li>
+            <li>実績や無料コンテンツがまだ少ない</li>
+            <li>販売前に認知と信頼を作る必要がある</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>方向性</h3>
+          <ul>
+            <li>eラーニングを講座ビジネスの武器として組み込む</li>
+            <li>AIエージェント等の無料コンテンツで認知を広げる</li>
+            <li>12月末〜1月開始に向けて逆算する</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>無料コンテンツと認知拡大</h2>
+      <div class="note">
+        <p>noteに第1巻・第2巻の内容を章ごとに無料公開していく案が出た。Kindle有料版との差別化は可能であり、無料公開は認知獲得の入口になり得る。ノウハウ系の記事と、人となり・考え方が伝わる記事を交互に出していく方針。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>コアメンバーとコミュニティ</h2>
+      <div class="grid cols-3">
+        <div class="flat"><h3>人数</h3><p>5〜10人程度のコアメンバーを集めて始める形が望ましい。</p></div>
+        <div class="flat"><h3>呼びかけ</h3><p>「第0期生募集」「立ち上げ仲間を探しています」という形で発信。</p></div>
+        <div class="flat"><h3>判断基準</h3><p>既存の知人かどうかよりも、ベクトルが一致しているかを重視する。</p></div>
+      </div>
+    </section>
+
+    <section id="radio">
+      <h2>富士産経グループのラジオ番組活用</h2>
+      <div class="panel">
+        <p>富士産経グループ総合研究所が開設する「ウェルビーングラボ」のラジオ番組に、渡邉社長が申し込み済み。テーマは60歳以降の活躍で、月2回・30分の番組枠。内容は自由に発信できる。</p>
+        <ul>
+          <li>富士産経グループのネームバリューをブランディングに活用する</li>
+          <li>ラジオをポッドキャストやYouTubeに転用する</li>
+          <li>コミュニティメンバーをゲストとして出演させる</li>
+          <li>契約書の作成が完了次第スタート予定</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>高橋への依頼</h2>
+      <div class="warning">
+        <p>渡邉社長から、noteやコンテンツ発信について「いつ・何を・どの順番で出すか」の演出設計依頼があった。ターゲットは主に50代後半〜60代前半。高橋は12月末〜1月スタートを逆算し、ラジオ、ブログ、電子書籍、eラーニング、講座募集をどう組み合わせるかを整理する。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>最近ダウンロードした関連資料</h2>
+      <div class="grid cols-2">
+        <div class="panel">
+          <h3>講座ビジネス戦略資料</h3>
+          <ul class="asset-list">
+            <li>
+              <a href="assets/Business_Planner_Launch_Blueprint.pdf"><strong>Business Planner Launch Blueprint</strong></a>
+              <span>2026年7月6日 15:14 ダウンロード。講座ビジネス立ち上げ方針の参考資料。</span>
+            </li>
+            <li>
+              <a href="assets/2026年冬_講座ビジネス_戦略ロードマップ.png"><strong>2026年冬 講座ビジネス 戦略ロードマップ</strong></a>
+              <span>2026年7月6日 15:15 ダウンロード。12月末〜1月開始に向けたロードマップ画像。</span>
+            </li>
+            <li>
+              <a href="assets/事業計画士®︎養成講座　全体構想（２２０２０３） (1).pdf"><strong>事業計画士®︎養成講座 全体構想</strong></a>
+              <span>2026年7月6日 11:07 ダウンロード。事業計画士®︎講座の全体構想資料。</span>
+            </li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>eラーニング講座資料</h3>
+          <ul class="asset-list">
+            <li>
+              <a href="assets/2026年6月／全1,066講座の10カテゴリー別一覧表（２６０６０８）エンドユーザー様.pdf"><strong>全1,066講座の10カテゴリー別一覧表</strong></a>
+              <span>2026年7月6日 11:08 ダウンロード。講座ラインナップ整理・提案導線の基礎資料。</span>
+            </li>
+            <li>
+              <a href="assets/20225年9月以降に追加された講座（２６０６１６）.pdf"><strong>2025年9月以降に追加された講座</strong></a>
+              <span>2026年7月6日 11:08 ダウンロード。新規追加講座の確認資料。</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <img class="preview" src="assets/2026年冬_講座ビジネス_戦略ロードマップ.png" alt="2026年冬 講座ビジネス 戦略ロードマップ">
+    </section>
+
+    <section id="next">
+      <h2>次回日程</h2>
+      <div class="panel">
+        <h3>2026年7月20日（月）11:00</h3>
+        <ul>
+          <li>高橋作成の講座ビジネス立ち上げ戦略・演出プラン確認</li>
+          <li>note・電子書籍コンテンツ発信の順番確認</li>
+          <li>無料コンテンツとコアメンバー募集導線の具体化</li>
+          <li>ラジオ番組の活用方針確認</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>関連資料</h2>
+      <div class="flat">
+        <ul>
+          <li><a href="2026-07-06-meeting-agenda.html">2026-07-06 渡邉社長MTG アジェンダ</a></li>
+          <li><a href="index.html">2026-07-06 MTG資料トップ</a></li>
+          <li><a href="../2026-06-22_MTG資料/2026-06-22-meeting-minutes.html">2026-06-22 議事録</a></li>
+          <li><a href="assets/Business_Planner_Launch_Blueprint.pdf">Business Planner Launch Blueprint</a></li>
+          <li><a href="assets/2026年冬_講座ビジネス_戦略ロードマップ.png">2026年冬 講座ビジネス 戦略ロードマップ</a></li>
+          <li><a href="https://circleback.ai/ja/meetings/iXCY9i3lc3Lp8yPTPIAtZ?tab=transcript">Circleback 記録</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-07-06 議事メモ Markdown</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #172033;
+      background: #f7f8fb;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.7;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #d9dee8;
+    }
+    .wrap {
+      width: min(1040px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .head { padding: 28px 0; }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    p {
+      margin: 8px 0 0;
+      color: #626b7b;
+    }
+    main { padding: 34px 0 70px; }
+    pre {
+      margin: 0;
+      padding: 24px;
+      border: 1px solid #d9dee8;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 14px 35px rgba(23, 32, 51, 0.08);
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap head">
+      <h1>2026-07-06_渡邉社長MTG_議事メモ.md</h1>
+      <p>Markdown本文をそのまま表示しています。</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <pre id="markdown">読み込み中...</pre>
+  </main>
+  <script>
+    const markdownUrl = "../2026-07-06_渡邉社長MTG_議事メモ.md";
+    fetch(markdownUrl)
+      .then((response) => {
+        if (!response.ok) throw new Error("Markdownを読み込めませんでした");
+        return response.text();
+      })
+      .then((text) => {
+        document.getElementById("markdown").textContent = text;
+      })
+      .catch((error) => {
+        document.getElementById("markdown").textContent = error.message;
+      });
+  </script>
+</body>
+</html>
