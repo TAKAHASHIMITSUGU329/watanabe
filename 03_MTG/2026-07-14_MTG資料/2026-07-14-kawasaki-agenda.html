@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-07-14 川崎社長 打ち合わせアジェンダ</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #626b7b;
+      --line: #d9dee8;
+      --paper: #f7f8fb;
+      --panel: #ffffff;
+      --navy: #1d3761;
+      --green: #1f7a5a;
+      --deep-green: #155f49;
+      --gold: #b78a2c;
+      --blue-soft: #e9f0f8;
+      --green-soft: #e9f6f0;
+      --gold-soft: #fbf4e5;
+      --shadow: 0 14px 35px rgba(23, 32, 51, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.75;
+    }
+    a { color: var(--green); font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { background: #fff; border-bottom: 1px solid var(--line); }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: end;
+      padding: 52px 0 36px;
+    }
+    .eyebrow { margin: 0 0 12px; color: var(--green); font-size: 14px; font-weight: 800; }
+    h1 { margin: 0; font-size: clamp(34px, 5vw, 58px); line-height: 1.12; letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 26px; line-height: 1.35; letter-spacing: 0; }
+    h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; letter-spacing: 0; }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 8px 0 0; padding-left: 1.3em; }
+    li { margin: 5px 0; }
+    main { padding: 34px 0 70px; }
+    section { margin-top: 34px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { padding: 12px 14px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { color: var(--deep-green); background: var(--green-soft); font-weight: 900; }
+    .lead { margin: 18px 0 0; color: var(--muted); font-size: 17px; }
+    .meta {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--green-soft);
+    }
+    .meta dl { display: grid; grid-template-columns: 96px 1fr; gap: 8px 14px; margin: 0; font-size: 15px; }
+    .meta dt { color: var(--deep-green); font-weight: 800; }
+    .meta dd { margin: 0; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      color: var(--navy);
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .pill.primary { color: #fff; background: var(--green); border-color: var(--green); }
+    .grid { display: grid; gap: 18px; }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .flat {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .highlight { padding: 18px 20px; border-left: 5px solid var(--green); border-radius: 8px; background: var(--green-soft); }
+    .note { padding: 18px 20px; border-left: 5px solid var(--gold); border-radius: 8px; background: var(--gold-soft); }
+    .worldview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .world-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .world-card.before { border-left: 6px solid #8b98aa; }
+    .world-card.after { border-left: 6px solid var(--green); background: var(--green-soft); }
+    .world-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: #eef1f5;
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .world-card.after .world-label {
+      color: var(--deep-green);
+      background: #fff;
+    }
+    .world-copy {
+      margin: 12px 0 0;
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 900;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+    .world-card.before .world-copy { color: #596475; }
+    .world-card.after .world-copy { color: var(--deep-green); }
+    .arrow-note {
+      margin-top: 16px;
+      padding: 18px 20px;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--green);
+      font-size: 18px;
+      font-weight: 900;
+      text-align: center;
+    }
+    .summary-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .summary-list li {
+      margin: 0;
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .summary-list strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--green);
+    }
+    .agenda {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+    .agenda li {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      margin: 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .time {
+      color: var(--green);
+      font-size: 19px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .time span { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: var(--deep-green);
+      background: var(--green-soft);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .small { color: var(--muted); font-size: 13px; }
+    footer { padding: 28px 0 44px; border-top: 1px solid var(--line); color: var(--muted); background: #fff; font-size: 13px; }
+    @media (max-width: 900px) {
+      .hero, .cols-2, .cols-3, .agenda li, .worldview { grid-template-columns: 1fr; }
+      .meta dl { grid-template-columns: 86px 1fr; }
+      table { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">2026-07-14 / Meeting Agenda</p>
+        <h1>川崎社長 打ち合わせ<br>アジェンダ</h1>
+        <p class="lead">渡邉社長と高橋が進める講座ビジネスに、川崎商事・川崎社長を立ち上げ仲間としてお誘いするための初回打ち合わせ。</p>
+        <div class="quick-links">
+          <a class="pill primary" href="#agenda">本日の流れ</a>
+          <a class="pill" href="2026-07-14-kawasaki-minutes.html">議事メモ</a>
+          <a class="pill" href="#goal">ゴール</a>
+          <a class="pill" href="#business">事業構想</a>
+          <a class="pill" href="#role">川崎社長への相談</a>
+          <a class="pill" href="#next">次アクション</a>
+          <a class="pill" href="../2026-07-06_MTG資料/高橋宿題_講座ビジネス立ち上げ設計計画.html">7/6 設計計画</a>
+        </div>
+      </div>
+      <div class="meta">
+        <dl>
+          <dt>日時</dt><dd>2026年7月14日（火）11:30〜</dd>
+          <dt>参加者</dt><dd>川崎社長、高橋</dd>
+          <dt>目的</dt><dd>講座ビジネス構想の共有と、川崎社長の関わり方の相談</dd>
+          <dt>前提</dt><dd>12月末〜1月の本格スタートを逆算して準備中</dd>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="worldview">
+      <h2>最初に共有したい世界観</h2>
+      <div class="worldview">
+        <div class="world-card before">
+          <span class="world-label">これまでの見られ方</span>
+          <p class="world-copy">老害<br>年金受給者</p>
+        </div>
+        <div class="world-card after">
+          <span class="world-label">私たちがつくりたい姿</span>
+          <p class="world-copy">老益<br>納税する人</p>
+        </div>
+      </div>
+      <div class="arrow-note">経験を社会の負担ではなく、次世代と地域企業を支える力に変える。</div>
+      <p class="small" style="margin-top: 12px;">今回の講座ビジネスは、人生後半の経験知をAI/DX時代の経営支援力へ変え、60代以降も価値を生み、社会に貢献し続ける人を増やすための構想です。</p>
+    </section>
+
+    <section id="summary">
+      <h2>0. エグゼクティブサマリ</h2>
+      <div class="highlight">
+        <p><strong>本日の位置づけ:</strong> 川崎社長に対して、渡邉社長と高橋が進めている講座ビジネス構想を共有し、川崎社長の知見・人脈・事業接点から見て、どのような関わり方が自然かを相談する初回の打ち合わせです。</p>
+      </div>
+      <div class="grid cols-3" style="margin-top: 18px;">
+        <div class="panel">
+          <h3>渡邉社長について</h3>
+          <p>渡邉社長は、人生後半の働き方・経験の活かし方をテーマに電子書籍を発信し、現在はAI/DX eラーニングと事業計画士講座を組み合わせた新しい講座ビジネスの立ち上げを進めています。</p>
+        </div>
+        <div class="panel">
+          <h3>今回の構想</h3>
+          <p>単にeラーニング教材を販売するのではなく、50代後半〜60代前半の経験知を、AI時代の経営支援力へ変えるための学び・実践・仲間づくりの仕組みとして設計します。</p>
+        </div>
+        <div class="panel">
+          <h3>川崎社長への相談</h3>
+          <p>川崎社長の経営者視点、地域・顧客接点、人脈の中で、この構想がどこに届きそうか、どの関わり方なら無理なく価値を生めるかを伺いたいと考えています。</p>
+        </div>
+      </div>
+      <section>
+        <h3>構想の考え方</h3>
+        <ul class="summary-list">
+          <li><strong>最初に売るのは講座ではなく、共感と信頼です。</strong>実績や無料コンテンツが少ない段階では、いきなり有料講座を売るよりも、渡邉社長の考え方、人柄、問題意識に共感してくれる人との関係づくりを優先します。</li>
+          <li><strong>eラーニングは単体商品ではなく、講座ビジネスの武器です。</strong>AI/DX eラーニングを、無料体験、学習ルート設計、事業計画士講座、コミュニティの中に組み込み、受講者の不安を下げる入口として活用します。</li>
+          <li><strong>第0期は、受講生というより立ち上げ仲間です。</strong>12月末〜1月の開始に向けて、まず5〜10人のコアメンバーを集め、実績・声・改善点を一緒につくる形を目指します。</li>
+          <li><strong>川崎社長には、参加可否の即答よりも、可能性の見立てをお願いしたいです。</strong>紹介、共同企画、壁打ち、地域展開、セミナー共催など、どの形が自然かを本日一緒に整理します。</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="goal">
+      <h2>1. 本日のゴール</h2>
+      <div class="grid cols-3">
+        <div class="panel">
+          <h3>構想を共有する</h3>
+          <p>AI/DX eラーニングと事業計画士講座を組み合わせ、50代後半〜60代前半の経験を経営支援力に変える事業構想を共有する。</p>
+        </div>
+        <div class="panel">
+          <h3>共感点を確認する</h3>
+          <p>川崎社長がどの部分に可能性を感じるか、どの顧客・地域・業界に展開できそうかを確認する。</p>
+        </div>
+        <div class="panel">
+          <h3>次の一歩を決める</h3>
+          <p>正式参加を急がず、まずは情報共有、役割仮説、候補先、次回MTGの進め方を決める。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="agenda">
+      <h2>2. 本日の流れ</h2>
+      <ol class="agenda">
+        <li>
+          <div class="time">11:30<span>5分</span></div>
+          <div>
+            <h3>挨拶・本日の趣旨共有</h3>
+            <p>本日は売り込みではなく、講座ビジネス構想を共有し、川崎社長のお考えを伺う相談の場であることを確認する。</p>
+          </div>
+        </li>
+        <li>
+          <div class="time">11:35<span>10分</span></div>
+          <div>
+            <h3>なぜ今この事業を進めるのか</h3>
+            <p>AI時代の社会実装が進み、中小企業・個人事業主・ミドルシニア層にAI/DXへの不安と学習ニーズが広がっている背景を共有する。</p>
+          </div>
+        </li>
+        <li>
+          <div class="time">11:45<span>15分</span></div>
+          <div>
+            <h3>講座ビジネス構想の説明</h3>
+            <p>eラーニングを単体販売するのではなく、無料発信、ラジオ、電子書籍、コミュニティ、事業計画士講座を一体化して立ち上げる構想を説明する。</p>
+          </div>
+        </li>
+        <li>
+          <div class="time">12:00<span>15分</span></div>
+          <div>
+            <h3>川崎社長にご相談したいこと</h3>
+            <p>川崎社長の事業、人脈、顧客層、地域接点の中で、この構想と相性が良い領域があるかを伺う。</p>
+          </div>
+        </li>
+        <li>
+          <div class="time">12:15<span>10分</span></div>
+          <div>
+            <h3>関わり方の仮説整理</h3>
+            <p>紹介者、共同企画者、営業協力者、立ち上げメンバー、地域展開パートナーなど、無理のない関わり方を仮で整理する。</p>
+          </div>
+        </li>
+        <li>
+          <div class="time">12:25<span>5分</span></div>
+          <div>
+            <h3>次アクション確認</h3>
+            <p>次回までに共有する資料、紹介候補、検討事項、次回日程を確認する。</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="business">
+      <h2>3. 講座ビジネスの骨子</h2>
+      <div class="highlight">
+        <p><strong>コンセプト:</strong> 経験を、AI時代の経営支援力に変える。</p>
+        <p>50代後半〜60代前半の方が、自分の経験知を棚卸しし、AI・DX・事業計画の学びを通じて、地域企業や個人事業主を支える側に回る講座ビジネスとして設計する。</p>
+      </div>
+      <div class="grid cols-2" style="margin-top: 18px;">
+        <div class="panel">
+          <h3>短期の狙い</h3>
+          <ul>
+            <li>第0期の立ち上げ仲間を5〜10人集める</li>
+            <li>無料コンテンツと発信で信頼をつくる</li>
+            <li>12月末〜1月に小さく開始できる状態にする</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>中長期の狙い</h3>
+          <ul>
+            <li>AI/DXに強い経営支援人材を育てる</li>
+            <li>地域企業・中小企業の学習導線をつくる</li>
+            <li>事業計画士講座を収益の柱に育てる</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. 導線イメージ</h2>
+      <table>
+        <thead>
+          <tr><th>段階</th><th>接点</th><th>目的</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>認知</td><td>ラジオ、note、ブログ、電子書籍の一部公開</td><td>渡邉社長の思想、北極星、人柄を知ってもらう。</td></tr>
+          <tr><td>興味</td><td>AI/DX無料動画、講座サイトの歩き方、学習ルート記事</td><td>AIへの苦手意識を下げ、自分にも必要だと感じてもらう。</td></tr>
+          <tr><td>関係構築</td><td>無料説明会、個別相談、コミュニティ</td><td>課題を聞き、信頼関係をつくる。</td></tr>
+          <tr><td>参加</td><td>第0期・立ち上げ仲間募集</td><td>小さく始め、実績と改善点をつくる。</td></tr>
+          <tr><td>展開</td><td>第1期募集、紹介、法人・団体提案</td><td>受講者の声をもとに販売導線を広げる。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="role">
+      <h2>5. 川崎社長にご相談したい関わり方</h2>
+      <div class="grid cols-3">
+        <div class="panel">
+          <h3>紹介・接点づくり</h3>
+          <p>AI/DX学習や事業計画づくりに関心がありそうな経営者、団体、地域ネットワークの候補を一緒に考える。</p>
+        </div>
+        <div class="panel">
+          <h3>企画の壁打ち</h3>
+          <p>講座テーマ、価格、導線、ターゲットの見せ方について、経営者目線で率直に意見をいただく。</p>
+        </div>
+        <div class="panel">
+          <h3>共同展開の可能性</h3>
+          <p>川崎商事の事業や顧客接点と相性がある場合、セミナー共催や紹介モデルの可能性を検討する。</p>
+        </div>
+      </div>
+      <div class="note" style="margin-top: 18px;">
+        <p>本日は、その場で結論を出すよりも「どの関わり方なら自然か」「どの相手に価値が届きそうか」を見つけることを優先する。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>6. 確認したい質問</h2>
+      <table>
+        <thead>
+          <tr><th>テーマ</th><th>質問</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>共感</td><td>この構想の中で、川崎社長が一番可能性を感じる部分はどこか。</td></tr>
+          <tr><td>対象者</td><td>AI/DXや事業計画の学びを必要としていそうな経営者・個人事業主・団体はあるか。</td></tr>
+          <tr><td>入口</td><td>いきなり有料講座ではなく、無料セミナーや勉強会なら参加しやすい層はいるか。</td></tr>
+          <tr><td>役割</td><td>川崎社長として無理なく関われるとしたら、紹介、壁打ち、共同企画、営業協力のどれが近いか。</td></tr>
+          <tr><td>懸念</td><td>進める上で気になる点、先に整理すべき点は何か。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="next">
+      <h2>7. 本日決めたいこと</h2>
+      <div class="grid cols-2">
+        <div class="flat">
+          <h3>決めること</h3>
+          <ul>
+            <li>川崎社長に共有する追加資料</li>
+            <li>次回までに検討する役割仮説</li>
+            <li>紹介・相談候補がある場合の進め方</li>
+            <li>次回MTGの日程</li>
+          </ul>
+        </div>
+        <div class="flat">
+          <h3>持ち帰り候補</h3>
+          <ul>
+            <li>講座ビジネス設計計画の確認</li>
+            <li>川崎商事との接点・相性の整理</li>
+            <li>紹介できそうな経営者・団体の洗い出し</li>
+            <li>無料セミナー共催の可能性確認</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>作成: 2026年7月14日 / 参照: 2026年7月6日 講座ビジネス立ち上げ設計・計画</p>
+    </div>
+  </footer>
+</body>
+</html>

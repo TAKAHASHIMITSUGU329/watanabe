@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>高橋宿題2〜5 講座ビジネス立ち上げ設計・計画</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #626b7b;
+      --line: #d9dee8;
+      --paper: #f7f8fb;
+      --panel: #ffffff;
+      --navy: #1d3761;
+      --green: #1f7a5a;
+      --deep-green: #155f49;
+      --gold: #b78a2c;
+      --blue-soft: #e9f0f8;
+      --green-soft: #e9f6f0;
+      --gold-soft: #fbf4e5;
+      --shadow: 0 14px 35px rgba(23, 32, 51, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.75;
+    }
+    a { color: var(--green); font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { background: #fff; border-bottom: 1px solid var(--line); }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: end;
+      padding: 52px 0 36px;
+    }
+    .eyebrow { margin: 0 0 12px; color: var(--green); font-size: 14px; font-weight: 800; }
+    h1 { margin: 0; font-size: clamp(34px, 5vw, 58px); line-height: 1.12; letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 26px; line-height: 1.35; letter-spacing: 0; }
+    h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; letter-spacing: 0; }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 8px 0 0; padding-left: 1.3em; }
+    li { margin: 5px 0; }
+    main { padding: 34px 0 70px; }
+    section { margin-top: 34px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { padding: 12px 14px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { color: var(--deep-green); background: var(--green-soft); font-weight: 900; }
+    .lead { margin: 18px 0 0; color: var(--muted); font-size: 17px; }
+    .meta {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--green-soft);
+    }
+    .meta dl { display: grid; grid-template-columns: 110px 1fr; gap: 8px 14px; margin: 0; font-size: 15px; }
+    .meta dt { color: var(--deep-green); font-weight: 800; }
+    .meta dd { margin: 0; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      color: var(--navy);
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .pill.primary { color: #fff; background: var(--green); border-color: var(--green); }
+    .grid { display: grid; gap: 18px; }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .flat {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .highlight { padding: 18px 20px; border-left: 5px solid var(--green); border-radius: 8px; background: var(--green-soft); }
+    .note { padding: 18px 20px; border-left: 5px solid var(--gold); border-radius: 8px; background: var(--gold-soft); }
+    .timeline { display: grid; gap: 16px; }
+    .phase {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .phase-no {
+      color: var(--green);
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+    .phase-no span { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; }
+    .strategy {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: item;
+      display: grid;
+      gap: 12px;
+    }
+    .strategy li {
+      counter-increment: item;
+      position: relative;
+      margin: 0;
+      padding: 15px 16px 15px 52px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .strategy li::before {
+      content: counter(item);
+      position: absolute;
+      top: 15px;
+      left: 16px;
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .article-list {
+      margin: 0;
+      padding-left: 1.25em;
+      columns: 2;
+      column-gap: 34px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: var(--deep-green);
+      background: var(--green-soft);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .small { color: var(--muted); font-size: 13px; }
+    footer { padding: 28px 0 44px; border-top: 1px solid var(--line); color: var(--muted); background: #fff; font-size: 13px; }
+    @media (max-width: 900px) {
+      .hero, .cols-2, .cols-3, .cols-4, .phase { grid-template-columns: 1fr; }
+      .meta dl { grid-template-columns: 92px 1fr; }
+      .article-list { columns: 1; }
+      table { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">高橋宿題2〜5 / Design Plan</p>
+        <h1>講座ビジネス立ち上げ<br>設計・計画</h1>
+        <p class="lead">12月末〜1月の本格スタートから逆算し、ラジオ、note、ブログ、電子書籍、eラーニング、事業計画士講座を一本の導線にするための初期設計。</p>
+        <div class="quick-links">
+          <a class="pill primary" href="2026-07-06-meeting-minutes.html">本日の議事メモ</a>
+          <a class="pill" href="2026-07-06-meeting-agenda.html">本日のアジェンダ</a>
+          <a class="pill" href="#strategy">戦略</a>
+          <a class="pill" href="#roadmap">ロードマップ</a>
+          <a class="pill" href="#content">発信設計</a>
+          <a class="pill" href="#next">次回まで</a>
+        </div>
+      </div>
+      <div class="meta">
+        <dl>
+          <dt>作成日</dt><dd>2026年7月6日</dd>
+          <dt>対象</dt><dd>高橋の宿題2〜5</dd>
+          <dt>目標</dt><dd>2026年12月末〜2027年1月の講座ビジネス開始</dd>
+          <dt>中核</dt><dd>北極星、発信、無料体験、立ち上げ仲間、第0期</dd>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>1. 設計目的</h2>
+      <div class="highlight">
+        <p>eラーニング講座を単体で売るのではなく、渡邉社長の北極星、電子書籍、note、ブログ、ラジオ、無料コンテンツ、コミュニティ、事業計画士講座を一本の導線にして、12月末〜1月の立ち上げにつなげる。</p>
+      </div>
+      <div class="grid cols-3" style="margin-top: 18px;">
+        <div class="panel">
+          <h3>最初に売るもの</h3>
+          <p>講座そのものではなく、渡邉社長の考え方に共感し、一緒に立ち上げたいと思える関係性。</p>
+        </div>
+        <div class="panel">
+          <h3>初期の成果</h3>
+          <p>5〜10人の立ち上げ仲間を集め、第0期として小さく開始できる状態。</p>
+        </div>
+        <div class="panel">
+          <h3>中心メッセージ</h3>
+          <p>経験を、AI時代の経営支援力に変える。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <h2>2. 宿題2: 戦略・演出プラン</h2>
+      <ol class="strategy">
+        <li>北極星を言語化する</li>
+        <li>無料発信で共感と信頼をつくる</li>
+        <li>無料コンテンツで体験入口をつくる</li>
+        <li>5〜10人の立ち上げ仲間を集める</li>
+        <li>第0期として小さく開始する</li>
+        <li>実績・声・改善点をもとに第1期へ展開する</li>
+      </ol>
+      <section>
+        <h3>各要素の役割</h3>
+        <table>
+          <thead><tr><th>要素</th><th>役割</th></tr></thead>
+          <tbody>
+            <tr><td>北極星・ミッション</td><td>共感の中心。なぜやるのかを伝える。</td></tr>
+            <tr><td>電子書籍</td><td>信頼の土台。渡邉社長の思想と人生観を伝える。</td></tr>
+            <tr><td>note・ブログ</td><td>継続接点。考え方とノウハウを蓄積する。</td></tr>
+            <tr><td>ラジオ</td><td>権威性・認知拡大・人物像の発信。</td></tr>
+            <tr><td>eラーニング</td><td>学習インフラ。AI/DXの実践教材として使う。</td></tr>
+            <tr><td>無料セミナー・動画</td><td>体験入口。不安を下げ、関係を深める。</td></tr>
+            <tr><td>コミュニティ</td><td>立ち上げ仲間の場。継続率と熱量を高める。</td></tr>
+            <tr><td>事業計画士講座</td><td>最終的な中核商品。収益化と育成の柱。</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <section id="roadmap">
+      <h2>3. 宿題3: 逆算ロードマップ</h2>
+      <div class="timeline">
+        <div class="phase">
+          <div class="phase-no">Phase 0<span>7月前半〜7月20日</span></div>
+          <div>
+            <h3>設計を固め、次回MTGで合意する</h3>
+            <ul>
+              <li>北極星メッセージを1本の文章にする</li>
+              <li>note・ブログの初期10本タイトルを決める</li>
+              <li>無料コンテンツの候補を決める</li>
+              <li>第0期・立ち上げ仲間の呼びかけ文を作る</li>
+              <li>ラジオの番組構成テンプレートを作る</li>
+            </ul>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-no">Phase 1<span>7月下旬〜8月</span></div>
+          <div>
+            <h3>発信を開始し、認知と信頼の土台をつくる</h3>
+            <ul>
+              <li>週2本以上のnote・ブログ投稿を開始</li>
+              <li>電子書籍の一部を無料公開し、現事業への接続コメントを添える</li>
+              <li>AI/DX eラーニング講座の無料体験導線を整える</li>
+              <li>リザーブストックの無料相談・無料セミナー導線を整える</li>
+            </ul>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-no">Phase 2<span>9月</span></div>
+          <div>
+            <h3>見込み客との接点を深める</h3>
+            <ul>
+              <li>無料セミナーまたは無料説明会を月2回実施</li>
+              <li>AIが苦手な人向けの入口動画を作る</li>
+              <li>第0期候補者への個別声かけを始める</li>
+              <li>ラジオ内容をnote・YouTube・ポッドキャストへ二次利用する</li>
+            </ul>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-no">Phase 3<span>10月</span></div>
+          <div>
+            <h3>第0期の輪郭を見せ、参加意欲を高める</h3>
+            <ul>
+              <li>第0期の募集予告ページを作る</li>
+              <li>立ち上げ仲間向け説明会を開催する</li>
+              <li>事業計画士講座とAI/DX eラーニングの組み合わせを提示する</li>
+              <li>参加候補者の課題をヒアリングする</li>
+            </ul>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-no">Phase 4<span>11月</span></div>
+          <div>
+            <h3>募集導線を完成させる</h3>
+            <ul>
+              <li>第0期募集ページを公開</li>
+              <li>説明会、個別相談、申込、決済までの流れを確認する</li>
+              <li>ラジオ・note・ブログで募集テーマを連動させる</li>
+              <li>5〜10人の候補者を個別にフォローする</li>
+            </ul>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-no">Phase 5<span>12月〜2027年1月</span></div>
+          <div>
+            <h3>第0期を開始し、実績づくりに入る</h3>
+            <ul>
+              <li>第0期を5〜10人で開始</li>
+              <li>初回オリエンテーションを実施</li>
+              <li>eラーニングの使い方動画を案内する</li>
+              <li>受講者の声を収集し、第1期に向けて改善する</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content">
+      <h2>4. 宿題4: note・電子書籍の発信設計</h2>
+      <div class="grid cols-4">
+        <div class="panel"><h3>北極星</h3><p>ミッション、人生観、なぜ今やるのか。共感をつくる。</p></div>
+        <div class="panel"><h3>ノウハウ</h3><p>AI/DX、講座選び、事業計画、経営支援。役に立つ人だと伝える。</p></div>
+        <div class="panel"><h3>物語</h3><p>渡邉社長の経験、師匠、電子書籍の背景。人物像を伝える。</p></div>
+        <div class="panel"><h3>導線</h3><p>無料体験、説明会、ラジオ、立ち上げ仲間募集。行動につなげる。</p></div>
+      </div>
+      <div class="note" style="margin-top: 18px;">
+        <p>電子書籍は全文をただ公開するのではなく、本文抜粋、現事業への接続、読者への問い、無料体験・無料相談への案内という順番で小出しにする。</p>
+      </div>
+      <section>
+        <h3>初期10本の記事案</h3>
+        <ol class="article-list">
+          <li>なぜ私は第3巻を止めて、講座ビジネスに舵を切ったのか</li>
+          <li>AIが苦手な人ほど、最初に学ぶべきことは技術ではなく問いである</li>
+          <li>60歳からの経験知は、AI時代の経営支援力になる</li>
+          <li>北極星を持つ人だけが、講座を事業に変えられる</li>
+          <li>講座が多すぎて選べない人へ。学習ルートは一緒に設計できる</li>
+          <li>事業計画士とは、資格ではなく人生後半の役割である</li>
+          <li>ラジオを始める理由。声で届けたい人生後半の働き方</li>
+          <li>eラーニングは売る商品ではなく、仲間を育てる武器である</li>
+          <li>第0期生ではなく、立ち上げ仲間を探しています</li>
+          <li>50代後半からの不安を、次の役割に変える方法</li>
+        </ol>
+      </section>
+    </section>
+
+    <section>
+      <h2>5. 宿題5: 交互発信のリズム</h2>
+      <div class="grid cols-2">
+        <div class="panel">
+          <h3>火曜: ノウハウ記事</h3>
+          <p>役立つ、保存される、検索される記事。AI/DX、講座選び、事業計画、学習ルートなどを扱う。</p>
+        </div>
+        <div class="panel">
+          <h3>金曜: 人物像・考え方記事</h3>
+          <p>共感される、信頼される、応援される記事。北極星、決断、経験、師匠、人生後半の役割を扱う。</p>
+        </div>
+      </div>
+      <section>
+        <h3>1か月の発信例</h3>
+        <table>
+          <thead><tr><th>週</th><th>ノウハウ記事</th><th>人物像・考え方記事</th></tr></thead>
+          <tbody>
+            <tr><td>第1週</td><td>AIが苦手な人の最初の一歩</td><td>なぜ第3巻を止めたのか</td></tr>
+            <tr><td>第2週</td><td>講座の選び方と受講順序</td><td>北極星を持つ意味</td></tr>
+            <tr><td>第3週</td><td>eラーニングを事業に組み込む方法</td><td>60歳からの経験知の価値</td></tr>
+            <tr><td>第4週</td><td>事業計画士が支援できること</td><td>立ち上げ仲間を探す理由</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <section id="next">
+      <h2>6. 次回MTGまでの準備</h2>
+      <div class="grid cols-2">
+        <div class="flat">
+          <h3>高橋側の成果物</h3>
+          <table>
+            <thead><tr><th>No.</th><th>成果物</th><th>内容</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>全体導線図</td><td>ラジオ、note、ブログ、電子書籍、eラーニング、無料相談、講座申込の流れ。</td></tr>
+              <tr><td>2</td><td>初期10本の記事構成案</td><td>タイトル、目的、CTA、公開順。</td></tr>
+              <tr><td>3</td><td>第0期募集コンセプト</td><td>「立ち上げ仲間募集」の呼びかけ文。</td></tr>
+              <tr><td>4</td><td>ラジオ番組テンプレート</td><td>30分番組の基本構成と二次利用方法。</td></tr>
+              <tr><td>5</td><td>無料コンテンツ案</td><td>AI/DX無料体験、講座サイトの歩き方、学習ルート診断など。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flat">
+          <h3>渡邉社長にお願いしたい準備</h3>
+          <table>
+            <thead><tr><th>No.</th><th>内容</th><th>目的</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>北極星を意識した最初の記事を書く</td><td>ミッションの言語化。</td></tr>
+              <tr><td>2</td><td>立ち上げ仲間候補を10〜20名書き出す</td><td>第0期候補者の可視化。</td></tr>
+              <tr><td>3</td><td>ラジオ契約・開始時期の情報を共有する</td><td>発信計画への反映。</td></tr>
+              <tr><td>4</td><td>リザーブストックの販売導線を確認する</td><td>申込・決済導線の整備。</td></tr>
+              <tr><td>5</td><td>電子書籍から無料公開したい章を選ぶ</td><td>note発信の素材化。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>7. 最初の結論</h2>
+      <div class="highlight">
+        <p>7月から9月は、売り込みよりも「共感・信頼・接点づくり」に集中する。10月に第0期の輪郭を見せ、11月に募集導線を完成させ、12月末〜1月に5〜10人で開始する。</p>
+        <p>渡邉社長の北極星を中心に置き、ノウハウと人物像を交互に発信しながら、ラジオ、電子書籍、eラーニング、事業計画士講座を一つの物語としてつなげていく。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>作成: 2026年7月6日 / 参照: 2026年7月6日 渡邉社長MTG議事メモ</p>
+    </div>
+  </footer>
+</body>
+</html>

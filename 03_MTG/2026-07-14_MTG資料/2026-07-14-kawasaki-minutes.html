@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-07-14 川崎社長MTG 議事メモ</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #626b7b;
+      --line: #d9dee8;
+      --paper: #f7f8fb;
+      --panel: #ffffff;
+      --navy: #1d3761;
+      --green: #1f7a5a;
+      --deep-green: #155f49;
+      --gold: #b78a2c;
+      --blue-soft: #e9f0f8;
+      --green-soft: #e9f6f0;
+      --gold-soft: #fbf4e5;
+      --shadow: 0 14px 35px rgba(23, 32, 51, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.75;
+    }
+    a { color: var(--green); font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { background: #fff; border-bottom: 1px solid var(--line); }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: end;
+      padding: 52px 0 36px;
+    }
+    .eyebrow { margin: 0 0 12px; color: var(--green); font-size: 14px; font-weight: 800; }
+    h1 { margin: 0; font-size: clamp(34px, 5vw, 58px); line-height: 1.12; letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 26px; line-height: 1.35; letter-spacing: 0; }
+    h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; letter-spacing: 0; }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 8px 0 0; padding-left: 1.3em; }
+    li { margin: 5px 0; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { padding: 12px 14px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { color: var(--deep-green); background: var(--green-soft); font-weight: 900; }
+    main { padding: 34px 0 70px; }
+    section { margin-top: 34px; }
+    blockquote {
+      margin: 14px 0 0;
+      padding: 18px 20px;
+      border-left: 5px solid var(--green);
+      border-radius: 8px;
+      background: var(--green-soft);
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--deep-green);
+    }
+    .lead { margin: 18px 0 0; color: var(--muted); font-size: 17px; }
+    .meta {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--green-soft);
+    }
+    .meta dl { display: grid; grid-template-columns: 96px 1fr; gap: 8px 14px; margin: 0; font-size: 15px; }
+    .meta dt { color: var(--deep-green); font-weight: 800; }
+    .meta dd { margin: 0; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      color: var(--navy);
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .pill.primary { color: #fff; background: var(--green); border-color: var(--green); }
+    .grid { display: grid; gap: 18px; }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .flat {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .highlight { padding: 18px 20px; border-left: 5px solid var(--green); border-radius: 8px; background: var(--green-soft); }
+    .note { padding: 18px 20px; border-left: 5px solid var(--gold); border-radius: 8px; background: var(--gold-soft); }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: var(--deep-green);
+      background: var(--green-soft);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .decision-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .decision-list li {
+      margin: 0;
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .small { color: var(--muted); font-size: 13px; }
+    footer { padding: 28px 0 44px; border-top: 1px solid var(--line); color: var(--muted); background: #fff; font-size: 13px; }
+    @media (max-width: 900px) {
+      .hero, .cols-2, .cols-3 { grid-template-columns: 1fr; }
+      .meta dl { grid-template-columns: 86px 1fr; }
+      table { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">2026-07-14 / Meeting Memo</p>
+        <h1>川崎社長MTG<br>議事メモ</h1>
+        <p class="lead">講座ビジネス構想の共有、川崎商事の5本柱、老益・納税する人という世界観、役割分担、7月20日の3者MTG設定を整理。</p>
+        <div class="quick-links">
+          <a class="pill primary" href="2026-07-14-kawasaki-agenda.html">本日のアジェンダ</a>
+          <a class="pill" href="#actions">Action Items</a>
+          <a class="pill" href="#agenda">アジェンダ</a>
+          <a class="pill" href="#concept">構想</a>
+          <a class="pill" href="#next">次回</a>
+        </div>
+      </div>
+      <div class="meta">
+        <dl>
+          <dt>日時</dt><dd>2026年7月14日（火）11:30頃〜</dd>
+          <dt>参加者</dt><dd>川崎社長、高橋</dd>
+          <dt>所要時間</dt><dd>約51分</dd>
+          <dt>記録</dt><dd>Circleback</dd>
+          <dt>次回</dt><dd>2026年7月20日（月・海の日）11:00〜12:00</dd>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="actions">
+      <h2>Action Items</h2>
+      <table>
+        <thead><tr><th>担当</th><th>内容</th><th>期限・補足</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag">高橋</span></td><td>渡邉社長と川崎社長の3者ミーティングを設定する</td><td>2026年7月20日（月・海の日）11:00〜12:00を候補に、渡邉社長へ連絡して確定する。</td></tr>
+          <tr><td><span class="tag">高橋</span></td><td>講座ビジネス構想の資料を川崎社長へ送付する</td><td>7/14アジェンダ、講座ビジネス設計計画などを事前共有する。</td></tr>
+          <tr><td><span class="tag">高橋</span></td><td>3者MTGで確認したい論点を整理する</td><td>渡邉社長の紹介、役割分担、ゼロ期メンバー候補、川崎社長の関わり方を中心に整理。</td></tr>
+          <tr><td><span class="tag">川崎社長</span></td><td>講座ビジネス構想資料を確認する</td><td>3者MTG前に構想・世界観・関わり方の仮説を把握する。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="agenda">
+      <h2>本日のアジェンダ</h2>
+      <div class="highlight">
+        <p>本日は、川崎社長に対して、渡邉社長と高橋が進めている講座ビジネス構想を共有し、立ち上げ仲間としての関わり方を相談する目的で実施した。</p>
+      </div>
+      <ol>
+        <li>川崎商事の現在の事業状況の共有</li>
+        <li>高橋から、渡邉社長との講座ビジネス構想を説明</li>
+        <li>「老害ではなく老益」「年金受給者ではなく納税する人」という世界観の共有</li>
+        <li>川崎社長に期待したい関わり方の相談</li>
+        <li>7月20日の渡邉社長を交えた3者MTGの設定</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>概要</h2>
+      <div class="grid cols-2">
+        <div class="panel">
+          <h3>共有したこと</h3>
+          <p>高橋から、渡邉社長と進めている講座ビジネス構想を川崎社長に共有し、立ち上げ仲間としての参加可能性を打診した。</p>
+        </div>
+        <div class="panel">
+          <h3>方向性</h3>
+          <p>50〜60代の経験知をAI/DX時代の経営支援力へ変え、得意分野を持つ人が互いに補い合うフラットなコミュニティとして育てる。</p>
+        </div>
+      </div>
+      <div class="note" style="margin-top: 18px;">
+        <p>川崎社長は構想に前向きで、次回は渡邉社長を交えた3者ミーティングを2026年7月20日（月・海の日）11:00〜12:00に実施する方向となった。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>川崎商事の現状共有</h2>
+      <table>
+        <thead><tr><th>柱</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>AIシステム</td><td>AIエージェント、アプリ制作など。1件契約済み。今後は開発をプロへ外注し、受注に集中する方針。</td></tr>
+          <tr><td>光熱費削減</td><td>新電力を中心とした法人向けコスト削減提案。3月から開始したばかり。</td></tr>
+          <tr><td>補助金・助成金</td><td>200人規模の指導実績を持つ専門家がチームに参加。病院向けに1億円規模の補助金提案も進行。</td></tr>
+          <tr><td>電子書籍ブランディング</td><td>電子書籍や発信をブランディングの柱として活用。</td></tr>
+          <tr><td>不動産節税</td><td>医師向けの0円投資・節税提案。医師ネットワーク経由で展開。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>不動産案件と医師ネットワーク</h2>
+      <div class="grid cols-2">
+        <div class="panel">
+          <h3>現在の実績</h3>
+          <ul>
+            <li>医師から医師への紹介が生まれている。</li>
+            <li>現在7名のドクターに30部屋を購入してもらっている。</li>
+            <li>購入者が20人規模になれば、信頼実績として大きなインパクトになる見込み。</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>直近の動き</h3>
+          <ul>
+            <li>2週間前に訪問した医師は購入に前向きだったが、奥様の反対で一旦ペンディング。</li>
+            <li>既存顧客の医師夫妻がつなぎ直し、来週、奥様も含めた食事会が実現する見込み。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="concept">
+      <h2>渡邉社長との講座ビジネス構想</h2>
+      <p>高橋から、渡邉社長の人物像と講座ビジネス構想を説明した。渡邉社長は、元電通系会社の社長で、経営コンサルタントとして活動。事業計画士、経営診断士の商標を持ち、大学講師も務めている。</p>
+      <blockquote>老害ではなく、老益。<br>年金受給者ではなく、納税する人。</blockquote>
+      <p style="margin-top: 16px;">50〜60代の経験を、次世代と地域企業を支える力に変える。大手企業の部長職などを経験した人が、退職後にハローワークでは活かしきれない経験やスキルを、AI/DX時代の経営支援力にリスキリングする仕組みとして設計している。</p>
+    </section>
+
+    <section>
+      <h2>役割分担の仮説</h2>
+      <table>
+        <thead><tr><th>人物</th><th>想定役割</th></tr></thead>
+        <tbody>
+          <tr><td>高橋</td><td>AIコンテンツ、AI/DX活用、講座設計、発信設計。</td></tr>
+          <tr><td>渡邉社長</td><td>経営、事業計画、人生後半の考え方、講座全体の思想。</td></tr>
+          <tr><td>川崎社長</td><td>営業、資産形成、不動産、補助金・助成金、実践的な案件開拓。</td></tr>
+        </tbody>
+      </table>
+      <div class="highlight" style="margin-top: 18px;">
+        <p>一人のカリスマが引っ張る形ではなく、メンバーそれぞれが得意技を持ち寄るフラットなコミュニティを目指す。</p>
+        <p>川崎社長からは、「コミュニティに入ったことで独立できた」という実績が出れば非常に価値が高い、という視点が示された。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>決定事項・合意事項</h2>
+      <ul class="decision-list">
+        <li>川崎社長は、講座ビジネス構想への参加・協力に前向き。</li>
+        <li>次回は渡邉社長を交えた3者MTGを設定する。</li>
+        <li>高橋から川崎社長へ、講座ビジネス構想の資料を事前共有する。</li>
+        <li>コミュニティは、AI、経営、営業、資産形成など、各自の得意分野を持ち寄る形で設計する。</li>
+      </ul>
+    </section>
+
+    <section id="next">
+      <h2>次回MTG</h2>
+      <div class="flat">
+        <table>
+          <tbody>
+            <tr><th>日時</th><td>2026年7月20日（月・海の日）11:00〜12:00</td></tr>
+            <tr><th>形式</th><td>Zoom予定</td></tr>
+            <tr><th>参加者</th><td>渡邉社長、川崎社長、高橋</td></tr>
+            <tr><th>主な議題</th><td>渡邉社長の紹介、講座ビジネス構想の共有、川崎社長の関わり方、ゼロ期メンバー候補、12月〜1月開始に向けた次アクション。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>作成: 2026年7月14日 / 参照: Circleback「川崎さんMTG」</p>
+    </div>
+  </footer>
+</body>
+</html>
