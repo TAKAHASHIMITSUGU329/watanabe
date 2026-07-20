@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-08-03 3者MTG提出資料</title>
+  <style>
+    :root { --ink:#173126; --muted:#65736b; --green:#167a50; --deep:#0c5035; --mint:#eaf6ef; --gold:#c58b2a; --line:#d8e3dc; --paper:#f4f7f5; --white:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif; line-height:1.75; }
+    header { padding:64px 24px 52px; color:white; background:linear-gradient(135deg,#0b4d34,#16815a 68%,#36a270); }
+    .wrap { width:min(1080px,calc(100% - 40px)); margin:0 auto; }
+    .eyebrow { margin:0 0 12px; font-size:13px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; opacity:.82; }
+    h1 { max-width:900px; margin:0; font-size:clamp(34px,6vw,64px); line-height:1.16; letter-spacing:-.03em; }
+    header .lead { max-width:800px; margin:22px 0 0; color:#e7f6ed; font-size:18px; }
+    .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+    .meta span { padding:7px 12px; border:1px solid rgba(255,255,255,.3); border-radius:999px; background:rgba(255,255,255,.1); font-size:13px; }
+    nav { position:sticky; top:0; z-index:4; overflow:auto; border-bottom:1px solid var(--line); background:rgba(255,255,255,.95); backdrop-filter:blur(12px); }
+    nav .wrap { display:flex; gap:6px; padding:10px 0; }
+    nav a { flex:0 0 auto; padding:8px 11px; border-radius:7px; color:var(--deep); font-size:13px; font-weight:700; text-decoration:none; }
+    nav a:hover { background:var(--mint); }
+    main { padding:36px 0 80px; }
+    section { margin:0 0 26px; padding:30px; border:1px solid var(--line); border-radius:16px; background:var(--white); box-shadow:0 12px 32px rgba(22,60,41,.06); }
+    h2 { margin:0 0 18px; color:var(--deep); font-size:27px; line-height:1.3; }
+    h3 { margin:24px 0 10px; color:var(--green); font-size:18px; }
+    p { margin:10px 0; }
+    blockquote { margin:18px 0; padding:20px 22px; border-left:5px solid var(--gold); border-radius:0 12px 12px 0; background:#fff9ed; font-size:19px; font-weight:700; }
+    .conclusion { border-color:#aed5be; background:linear-gradient(145deg,#fff,#f0fbf5); }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .card { padding:18px; border:1px solid var(--line); border-radius:12px; background:#fbfdfc; }
+    .card b { display:block; margin-bottom:6px; color:var(--green); }
+    table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
+    th,td { padding:12px 13px; border:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { color:var(--deep); background:var(--mint); }
+    td:empty { height:42px; background:#fffdf7; }
+    ul,ol { padding-left:1.5em; }
+    .flow { padding:20px; border-radius:12px; background:#eef8f2; text-align:center; font-weight:800; }
+    .arrow { color:var(--gold); padding:0 8px; }
+    .decision { border-left:6px solid var(--gold); }
+    .links a { display:inline-block; margin:4px 8px 4px 0; padding:9px 13px; border:1px solid var(--green); border-radius:8px; color:var(--green); text-decoration:none; font-weight:700; }
+    footer { padding:30px 20px; color:var(--muted); text-align:center; }
+    @media (max-width:760px) { .grid{grid-template-columns:1fr;} section{padding:22px;} table{display:block;overflow-x:auto;} }
+    @media print { nav{display:none;} body{background:#fff;} section{box-shadow:none;break-inside:avoid;} header{padding:36px 0;} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">Third Planning Meeting · Proposal</p>
+      <h1>会社軸から自分軸への<br>リセット・プログラム</h1>
+      <p class="lead">第0期の対象者・提供価値・実施条件・役割分担を決めるための、3者MTG提出資料です。</p>
+      <div class="meta"><span>2026年8月3日（月）11:00</span><span>Zoom</span><span>渡邉社長・川崎社長・高橋</span><span>作成：高橋</span></div>
+    </div>
+  </header>
+  <nav><div class="wrap"><a href="#proposal">結論案</a><a href="#concept">コンセプト</a><a href="#change">変化</a><a href="#program">3か月</a><a href="#rules">参加基準</a><a href="#roles">役割</a><a href="#decisions">決定事項</a><a href="#actions">次アクション</a></div></nav>
+  <main class="wrap">
+    <section id="proposal" class="conclusion">
+      <h2>1. 本日の結論案</h2>
+      <p>人生後半の経験知を次の役割へ変える3か月間のプログラムを、価値観の合う5名の「立ち上げ仲間」とともに始めます。</p>
+      <table><tbody>
+        <tr><th>第0期の名称</th><td>第0期・立ち上げ仲間</td><th>定員</th><td>5名</td></tr>
+        <tr><th>期間</th><td>3か月</td><th>開始</th><td>2027年1月</td></tr>
+        <tr><th>形式</th><td>Zoom中心＋対面実践会1回</td><th>価格案</th><td>55,000円（税込）</td></tr>
+        <tr><th>中心対象</th><td colspan="3">50代後半〜60代前半の会社員・退職準備層・独立準備層</td></tr>
+        <tr><th>最重要ゴール</th><td colspan="3">自分の次の役割を見つけ、最初の実践計画を作る</td></tr>
+      </tbody></table>
+      <p><small>※価格、資格認定、eラーニングの提供範囲は本日の検討事項です。</small></p>
+    </section>
+
+    <section id="concept">
+      <h2>2. コアコンセプト</h2>
+      <blockquote>会社軸から自分軸へ。会社で培った経験知を棚卸しし、AIと事業計画を学びながら、自分の次の役割を見つける。</blockquote>
+      <p>講座はゴールではなくスタートです。資格取得や知識習得だけで終わらず、受講後のコミュニティと実践活動を本当の価値とします。</p>
+      <div class="flow">経験知・自分軸 <span class="arrow">→</span> 事業計画＋AI・DX <span class="arrow">→</span> コミュニティで実践・伴走</div>
+    </section>
+
+    <section id="change">
+      <h2>3. 参加前から参加後への変化</h2>
+      <table><thead><tr><th>参加前</th><th>参加後</th></tr></thead><tbody>
+        <tr><td>会社の評価基準で自分を見ている</td><td>MUST・WILL・CANを自分の言葉で説明できる</td></tr>
+        <tr><td>肩書を外すと何ができるかわからない</td><td>経験知と市場価値を説明できる</td></tr>
+        <tr><td>次に何をするか漠然としている</td><td>支援したい相手と自分の役割が明確になる</td></tr>
+        <tr><td>AIに不安や苦手意識がある</td><td>自分の目的に合ったAIの使い方がわかる</td></tr>
+        <tr><td>学んでも実践する場がない</td><td>仲間とともに小さな支援実践を始められる</td></tr>
+      </tbody></table>
+    </section>
+
+    <section>
+      <h2>4. プログラムの3つの柱</h2>
+      <div class="grid">
+        <div class="card"><b>01 自分軸をつくる</b>経験、成功、失敗、価値観を棚卸しし、MUST・WILL・CANと個人のミッションを言語化する。</div>
+        <div class="card"><b>02 支援する力を身につける</b>事業計画とAI・DXを学び、経験知を中小企業や個人事業主への支援力に変える。</div>
+        <div class="card"><b>03 仲間と実践する</b>得意技を持ち寄り、引っ張るのではなく相手の背中を押す「老益」として実践する。</div>
+      </div>
+    </section>
+
+    <section id="program">
+      <h2>5. 3か月の進行案</h2>
+      <table><thead><tr><th>時期</th><th>テーマ</th><th>内容</th><th>成果物</th></tr></thead><tbody>
+        <tr><td>1か月目</td><td>会社軸を外す</td><td>経験・成功・失敗・人脈・得意分野の棚卸し</td><td>経験知棚卸しシート</td></tr>
+        <tr><td>2か月目</td><td>自分軸をつくる</td><td>MUST・WILL・CAN、個人ミッション、AI・DX学習</td><td>自分軸宣言、支援テーマ</td></tr>
+        <tr><td>3か月目</td><td>小さく実践する</td><td>経営者との対話、事業計画、フィードバック</td><td>90日実践計画、最終発表</td></tr>
+      </tbody></table>
+      <ul><li>Zoomグループ会：月2回、全6回</li><li>個別面談：期間中2回</li><li>eラーニング：目的に応じて選択</li><li>可能であれば対面実践会を1回</li></ul>
+    </section>
+
+    <section id="rules">
+      <h2>6. コミュニティの参加基準案</h2>
+      <table><thead><tr><th>来てほしい人</th><th>来てほしくない人</th></tr></thead><tbody>
+        <tr><td>相手の経験と意見をリスペクトできる</td><td>相手を否定し、自分の正解を押しつける</td></tr>
+        <tr><td>経験を誰かのために役立てたい</td><td>金儲けだけを第一の目的にする</td></tr>
+        <tr><td>学ぶだけでなく、小さく試せる</td><td>評論だけで自ら行動しない</td></tr>
+        <tr><td>得意技を仲間と持ち寄れる</td><td>資格だけで仕事が得られると考える</td></tr>
+      </tbody></table>
+    </section>
+
+    <section id="roles">
+      <h2>7. 3人の役割案</h2>
+      <div class="grid">
+        <div class="card"><b>渡邉社長</b>思想、自分軸、事業計画、経営者との対話、全体の北極星</div>
+        <div class="card"><b>川崎社長</b>営業、独立経験、信頼関係づくり、案件開拓、専門家連携、実践フィールド</div>
+        <div class="card"><b>高橋</b>AI・DX、教材・コンテンツ化、講座設計、発信、運営導線</div>
+      </div>
+    </section>
+
+    <section id="decisions" class="decision">
+      <h2>8. 本日決めること</h2>
+      <table><thead><tr><th>No.</th><th>決定事項</th><th>高橋案</th><th>決定内容</th></tr></thead><tbody>
+        <tr><td>1</td><td>コアコンセプト</td><td>会社軸から自分軸へのリセット</td><td></td></tr>
+        <tr><td>2</td><td>中心対象</td><td>50代後半〜60代前半</td><td></td></tr>
+        <tr><td>3</td><td>定員・期間・開始</td><td>5名・3か月・2027年1月</td><td></td></tr>
+        <tr><td>4</td><td>形式</td><td>Zoom中心＋対面会1回</td><td></td></tr>
+        <tr><td>5</td><td>価格</td><td>有料モニター、55,000円を起点</td><td></td></tr>
+        <tr><td>6</td><td>資格認定・提供範囲</td><td>要検討</td><td></td></tr>
+        <tr><td>7</td><td>3人の役割分担</td><td>上記案</td><td></td></tr>
+      </tbody></table>
+    </section>
+
+    <section id="actions">
+      <h2>9. 決定後のアクション</h2>
+      <table><thead><tr><th>アクション</th><th>担当</th><th>期限案</th></tr></thead><tbody>
+        <tr><td>本日の決定を各資料へ反映</td><td>高橋</td><td>8月上旬</td></tr>
+        <tr><td>候補者リスト統合・優先順位決定</td><td>3人</td><td>8月上旬</td></tr>
+        <tr><td>経験知棚卸しシートを試用・改善</td><td>3人</td><td>8月中旬</td></tr>
+        <tr><td>自分軸・事業計画の講座骨子</td><td>渡邉社長</td><td>8月末</td></tr>
+        <tr><td>営業・独立経験の教材化</td><td>川崎社長</td><td>8月末</td></tr>
+        <tr><td>第0期説明資料・面談フォーム</td><td>高橋</td><td>9月</td></tr>
+      </tbody></table>
+    </section>
+
+    <section class="links">
+      <h2>詳細資料</h2>
+      <a href="2026-08-03_講座コンセプト1枚企画書.md">コンセプト企画書</a>
+      <a href="2026-08-03_第0期条件比較・高橋推奨案.md">第0期条件比較</a>
+      <a href="2026-08-03_経験知棚卸しシート.md">経験知棚卸しシート</a>
+    </section>
+  </main>
+  <footer>2026-08-03 3者MTG · 第0期立ち上げ案</footer>
+</body>
+</html>
