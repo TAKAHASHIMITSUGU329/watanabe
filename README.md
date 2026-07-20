@@ -27,7 +27,7 @@
 - 現行原稿:
   - `01_原稿/現行/`
 - 最新MTG資料（2026-07-20 3者MTG）:
-  - `03_MTG/2026-07-20_MTG資料/index.html`
+  - `03_MTG/2026-07-20-meeting-materials/index.html`
 - 2026-05-28 MTG資料:
   - `03_MTG/2026-05-28_MTG資料/index.html`
 
