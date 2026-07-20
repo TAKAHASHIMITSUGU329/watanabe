@@ -18,6 +18,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `02_設計資料/` — 執筆設計書、構成案、般若心経メモ
 - `03_MTG/` — MTGアジェンダ・議事録・録音文字起こし・5/28作成HTML資料
 - `04_事業計画士/PDF資料/` — 事業計画士関連PDF
+- `04_事業計画士/Pages資料/` — 事業計画士講座・集客導線などのPages資料
 - `05_表紙デザイン/` — 表紙画像案、比較HTML、作業用画像
 
 ## 関係者・スケジュール

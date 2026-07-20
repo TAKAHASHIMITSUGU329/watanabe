@@ -13,7 +13,8 @@
 - `03_MTG/`
   - MTGアジェンダ、議事録、録音・文字起こし、2026-05-28作成HTML資料
 - `04_事業計画士/`
-  - 事業計画士関連PDF
+  - `PDF資料/` — 事業計画士関連PDF
+  - `Pages資料/` — 事業計画士講座・集客導線などのPages資料
 - `05_表紙デザイン/`
   - 表紙画像案、比較HTML、作業用画像
 
@@ -25,12 +26,14 @@
   - `03_MTG/2026-05-13_渡邉社長MTG_議事録.md`
 - 現行原稿:
   - `01_原稿/現行/`
+- 最新MTG資料（2026-07-20 3者MTG）:
+  - `03_MTG/2026-07-20_MTG資料/index.html`
 - 2026-05-28 MTG資料:
   - `03_MTG/2026-05-28_MTG資料/index.html`
 
 ## 公開HTML
 
-本日作成したHTML4点のみ、以下のGitHub Pagesで公開しています。
+MTG共有用に作成したHTML資料（アジェンダ・議事メモ・講座ビジネス構想など）を、以下のGitHub Pagesで公開しています。
 
 https://takahashimitsugu329.github.io/watanabe-html/
 
@@ -38,4 +41,3 @@ https://takahashimitsugu329.github.io/watanabe-html/
 
 - private本体リポジトリ: `TAKAHASHIMITSUGU329/watanabe`
 - public HTMLリポジトリ: `TAKAHASHIMITSUGU329/watanabe-html`
-
