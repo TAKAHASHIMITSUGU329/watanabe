@@ -41,5 +41,5 @@ https://takahashimitsugu329.github.io/watanabe-html/
 
 ## GitHub
 
-- private本体リポジトリ: `TAKAHASHIMITSUGU329/watanabe`
-- public HTMLリポジトリ: `TAKAHASHIMITSUGU329/watanabe-html`
+- 本体リポジトリ（public・GitHub Pages有効）: `TAKAHASHIMITSUGU329/watanabe`
+- 共有用HTMLリポジトリ（public）: `TAKAHASHIMITSUGU329/watanabe-html`
